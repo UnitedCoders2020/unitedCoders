@@ -1,8 +1,7 @@
 package test;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -16,7 +15,8 @@ public class registrationTest extends Registration{
 	
 	static ExtentReports report = ExtendReport.getReportInstance();
 	static ExtentTest logger;
-	@Test(priority=1)
+	
+	@Test(priority=1,groups= {"SmokeTesting","RegressionTesting"})
 	public static void validRegistration() {
 		
 		logger = report.createTest("Registration is successful");
@@ -30,7 +30,9 @@ public class registrationTest extends Registration{
 		logger.log(Status.INFO, "Registration successfull without phone number.");
 		logger.log(Status.PASS, "Valid registration done.");
 	}
-    @Test(priority=2)
+	
+	
+    @Test(priority=2,groups= {"SmokeTesting","RegressionTesting"})
 	public static void invalidRegistration() {
 
     	logger = report.createTest("Registration error messages.");

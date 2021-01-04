@@ -4,13 +4,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
-import org.testng.annotations.AfterSuite;
 
 public class DriverSetup {
 	//Declaring the static variable
 	public static WebDriver driver;
 	
-	//@BeforeSuite
+	
 	//Crating invokeDriver method which will take browserName as a parameter
 	public static WebDriver invokeDriver(String browserName) {
 		
@@ -63,9 +62,5 @@ public class DriverSetup {
 		return driver;
 	}
 	
-	@AfterSuite
-	public static void closeDriver() {
-		driver.quit();
-	}
 	
 }

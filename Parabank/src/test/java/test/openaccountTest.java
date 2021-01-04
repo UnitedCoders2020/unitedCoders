@@ -1,7 +1,6 @@
 package test;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -15,7 +14,7 @@ public class openaccountTest extends OpenAccount {
 	static ExtentReports report = ExtendReport.report;
 	static ExtentTest logger;
 
-	@Test(priority = 1)
+	@Test(priority = 1,groups= {"SmokeTesting","RegressionTesting"})
 	public static void openaccountmessage() {
 
 		logger = report.createTest("Open Account Message");
@@ -26,7 +25,7 @@ public class openaccountTest extends OpenAccount {
 		logger.log(Status.PASS, "New Account has been opened with minimum balance");
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 2,groups= {"SmokeTesting","RegressionTesting"})
 	public static void verifyAccount() {
 
 		logger = report.createTest("Verify Account");
@@ -36,8 +35,5 @@ public class openaccountTest extends OpenAccount {
 		logger.log(Status.PASS, "New Account has been opened and verified");
 	}
 
-	/*@AfterClass
-	public static void closeBrowser() {
-		report.flush();
-	}*/
+	
 }

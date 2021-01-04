@@ -16,11 +16,11 @@ import com.testing.Parabank.Utils.ReadingExcel;
 public class OpenAccount {
 	static WebDriver driver;
 	static XSSFSheet sheet=ReadingExcel.sheet;
+	
+	
 
 	public static String open() {
 		
-		//driver = DriverSetup.invokeDriver("FirefoxDriver_WindowsOS");
-		//driver.get("https://parabank.parasoft.com/parabank/index.html");
 		driver=DriverSetup.driver;
 		
 		driver.findElement(By.name("username")).sendKeys(sheet.getRow(10).getCell(1).getStringCellValue());
@@ -38,7 +38,6 @@ public class OpenAccount {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		driver.findElement(By.xpath("//input[@class='button']")).click();
@@ -62,7 +61,6 @@ public class OpenAccount {
 		int c=0;
 		for(int i=0;i<element.size();i++) {
 			String str=element.get(i).getText();
-			System.out.println(str);
 			if(str.contains(accno)) {
 				c++;
 			}

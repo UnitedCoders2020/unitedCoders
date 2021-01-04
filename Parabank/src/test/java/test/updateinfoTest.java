@@ -2,7 +2,6 @@ package test;
 
 import com.testing.Parabank.Pages.UpdateInfo;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -14,7 +13,7 @@ public class updateinfoTest extends UpdateInfo {
 	static ExtentReports report = ExtendReport.report;
 	static ExtentTest logger;
 
-	@Test(priority = 1)
+	@Test(priority = 1,groups= {"SmokeTesting","RegressionTesting"})
 	public static void validUpdate() {
 
 		logger = report.createTest("Update Valid Information");
@@ -25,7 +24,7 @@ public class updateinfoTest extends UpdateInfo {
 
 	}
 
-	@Test(priority = 2)
+	@Test(priority = 2,groups= {"SmokeTesting","RegressionTesting"})
 	public static void invalidUpdate() {
 		logger = report.createTest("Invalid Update Information");
 
@@ -49,11 +48,9 @@ public class updateinfoTest extends UpdateInfo {
 		Assert.assertEquals(zip, "Zip Code is required.");
 		logger.log(Status.PASS, "Zip code error message verified.");
 
+		report.flush();
+		
 	}
 
-	/*@AfterClass
-	public static void closeBrowser() {
-		report.flush();
-	}*/
 
 }

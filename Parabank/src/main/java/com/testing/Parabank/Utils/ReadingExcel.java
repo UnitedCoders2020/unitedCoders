@@ -2,11 +2,8 @@ package com.testing.Parabank.Utils;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
-
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.testng.annotations.AfterSuite;
 
 
 public class ReadingExcel {
@@ -29,12 +26,5 @@ public class ReadingExcel {
 	return sheet;
     }
     
-    @AfterSuite
-    public static void closeWorkbook() {
-    	try {
-			workbook.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-    }
+	
 }

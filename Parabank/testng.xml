@@ -1,6 +1,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="ParabankWebsiteTest">
-   <test name="FunctionalTesting">
+
+   <test name="Smoke And Regression Testing">
+   	<groups>  
+		<run>  
+			<include name="SmokeTesting"/> 
+			<include name="RegressionTesting"/> 
+		</run>  
+	</groups> 
       <classes>
         <class name="com.testing.Parabank.TestBase.DriverSetup"/>
         <class name="com.testing.Parabank.ExtensionMethods.ExtendReport"/>
@@ -13,5 +20,5 @@
       </classes>
      </test>
      
-     
+    
 </suite>

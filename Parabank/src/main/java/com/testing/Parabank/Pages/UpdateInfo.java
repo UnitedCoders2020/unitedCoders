@@ -4,26 +4,20 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.Test;
-
+import com.testing.Parabank.ExtensionMethods.ScreenShot;
 import com.testing.Parabank.TestBase.DriverSetup;
 
 public class UpdateInfo {
 	static WebDriver driver;
+	
+	 public static void screenshot(String name) {
+		    
+	    	ScreenShot.takeScreenshot(driver, name);
+	    }
    
 	public static String update()  {
 
-		driver = DriverSetup.driver;//.invokeDriver("FirefoxDriver_WindowsOS");
-		//driver.get("https://parabank.parasoft.com/parabank/index.html");
-
-		//driver.findElement(By.name("username")).sendKeys("qqqqq");
-		//driver.findElement(By.name("password")).sendKeys("q");
-		//driver.findElement(By.xpath("//input[@value=\"Log In\"]")).click();
-
-		//driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-
+		driver = DriverSetup.driver;
 		driver.findElement(By.xpath("//a[contains(text(),'Update Contact Info')]")).click();
 
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -38,7 +32,7 @@ public class UpdateInfo {
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		driver.findElement(By.xpath("//tbody/tr[8]/td[2]/input[1]")).click();
@@ -68,7 +62,7 @@ public class UpdateInfo {
 		driver.findElement(By.xpath("//tbody/tr[8]/td[2]/input[1]")).click();
 
 		String result1 = driver.findElement(By.xpath("//span[contains(text(),'First name is required.')]")).getText();
-		// System.out.println(result1);
+		screenshot("UpdateInfo_firstnameError");
 		return result1;
 
 	}
@@ -88,7 +82,7 @@ public class UpdateInfo {
 		driver.findElement(By.xpath("//tbody/tr[8]/td[2]/input[1]")).click();
 
 		String result2 = driver.findElement(By.xpath("//span[contains(text(),'Last name is required.')]")).getText();
-		// System.out.println(result2);
+		screenshot("UpdateInfo_lastnameError");
 		return result2;
 
 	}
@@ -108,7 +102,7 @@ public class UpdateInfo {
 		driver.findElement(By.xpath("//tbody/tr[8]/td[2]/input[1]")).click();
 
 		String result3 = driver.findElement(By.xpath("//span[contains(text(),'Address is required.')]")).getText();
-		// System.out.println(result3);
+		screenshot("UpdateInfo_addressError");
 		return result3;
 
 	}
@@ -130,7 +124,7 @@ public class UpdateInfo {
 		driver.findElement(By.xpath("//tbody/tr[8]/td[2]/input[1]")).click();
 
 		String result4 = driver.findElement(By.xpath("//span[contains(text(),'City is required.')]")).getText();
-		// System.out.println(result4);
+		screenshot("UpdateInfo_cityError");
 		return result4;
 
 	}
@@ -150,7 +144,7 @@ public class UpdateInfo {
 		driver.findElement(By.xpath("//tbody/tr[8]/td[2]/input[1]")).click();
 
 		String result5 = driver.findElement(By.xpath("//span[contains(text(),'State is required.')]")).getText();
-		// System.out.println(result5);
+		screenshot("UpdateInfo_stateError");
 		return result5;
 
 	}
@@ -170,7 +164,8 @@ public class UpdateInfo {
 		driver.findElement(By.xpath("//tbody/tr[8]/td[2]/input[1]")).click();
 
 		String result6 = driver.findElement(By.xpath("//span[contains(text(),'Zip Code is required.')]")).getText();
-		// System.out.println(result6);
+		screenshot("UpdateInfo_zipcodeError");
+		driver.quit();
 		return result6;
 
 	}

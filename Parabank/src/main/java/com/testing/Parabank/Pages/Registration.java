@@ -6,24 +6,29 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
+import com.testing.Parabank.ExtensionMethods.ScreenShot;
 import com.testing.Parabank.TestBase.DriverSetup;
 import com.testing.Parabank.Utils.ReadingExcel;
 
 public class Registration {
 
-	static WebDriver driver;
+	static WebDriver driver=DriverSetup.invokeDriver("FirefoxDriver_WindowsOS");
 	static XSSFSheet sheet=ReadingExcel.getDataFromExcel();
-
-	public static String register() {
-
-		driver = DriverSetup.invokeDriver("FirefoxDriver_WindowsOS");
-		driver.get(sheet.getRow(14).getCell(1).getStringCellValue());
-		driver.findElement(By.linkText("Register")).click();
-
-		WebDriverWait Wait = new WebDriverWait(driver, 50);
+    static WebDriverWait Wait = new WebDriverWait(driver, 50);
+    
+   
+    public static void openRegisterForm() {
+    	driver.findElement(By.linkText("Register")).click();
 		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("customer.firstName")));
-
+    }
+    
+    public static void screenshot(String name) {
+    	ScreenShot.takeScreenshot(driver, name);
+    }
+    
+	public static String register() {
+		
+		openRegisterForm();
 		driver.findElement(By.id("customer.firstName")).sendKeys(sheet.getRow(2).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.lastName")).sendKeys(sheet.getRow(3).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.address.street")).sendKeys(sheet.getRow(4).getCell(1).getStringCellValue());
@@ -49,13 +54,7 @@ public class Registration {
 	
 	public static String firstnameError() {
 
-		driver.get("https://parabank.parasoft.com/parabank/index.htm");
-		driver.findElement(By.linkText("Register")).click();
-
-		WebDriverWait Wait = new WebDriverWait(driver, 30);
-		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("customer.firstName")));
-
-		
+		openRegisterForm();
 		driver.findElement(By.id("customer.lastName")).sendKeys(sheet.getRow(3).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.address.street")).sendKeys(sheet.getRow(4).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.address.city")).sendKeys(sheet.getRow(5).getCell(1).getStringCellValue());
@@ -68,6 +67,7 @@ public class Registration {
 		driver.findElement(By.id("repeatedPassword")).sendKeys(sheet.getRow(12).getCell(1).getStringCellValue());
 		driver.findElement(By.xpath("//input[@value='Register']")).click();
 		String actualResult = driver.findElement(By.id("customer.firstName.errors")).getText();
+		screenshot("Registration_firstnameError");
 		return actualResult;
 
 	}
@@ -75,12 +75,7 @@ public class Registration {
 	
 	public static String lastnameError() {
 
-		driver.get("https://parabank.parasoft.com/parabank/index.htm");
-		driver.findElement(By.linkText("Register")).click();
-
-		WebDriverWait Wait = new WebDriverWait(driver, 30);
-		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("customer.firstName")));
-
+		openRegisterForm();
 		driver.findElement(By.id("customer.firstName")).sendKeys(sheet.getRow(2).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.address.street")).sendKeys(sheet.getRow(4).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.address.city")).sendKeys(sheet.getRow(5).getCell(1).getStringCellValue());
@@ -93,18 +88,14 @@ public class Registration {
 		driver.findElement(By.id("repeatedPassword")).sendKeys(sheet.getRow(12).getCell(1).getStringCellValue());
 		driver.findElement(By.xpath("//input[@value='Register']")).click();
 		String actualResult = driver.findElement(By.id("customer.lastName.errors")).getText();
+		screenshot("Registration_lastnameError");
 		return actualResult;
 
 	}
 	
 	public static String addressError() {
 
-		driver.get("https://parabank.parasoft.com/parabank/index.htm");
-		driver.findElement(By.linkText("Register")).click();
-
-		WebDriverWait Wait = new WebDriverWait(driver, 30);
-		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("customer.firstName")));
-
+		openRegisterForm();
 		driver.findElement(By.id("customer.firstName")).sendKeys(sheet.getRow(2).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.lastName")).sendKeys(sheet.getRow(3).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.address.city")).sendKeys(sheet.getRow(5).getCell(1).getStringCellValue());
@@ -117,18 +108,14 @@ public class Registration {
 		driver.findElement(By.id("repeatedPassword")).sendKeys(sheet.getRow(12).getCell(1).getStringCellValue());
 		driver.findElement(By.xpath("//input[@value='Register']")).click();
 		String errMessage = driver.findElement(By.id("customer.address.street.errors")).getText();
+		screenshot("Registration_addressError");
 		return errMessage;
 
 	}
 	
 	public static String cityError() {
 
-		driver.get("https://parabank.parasoft.com/parabank/index.htm");
-		driver.findElement(By.linkText("Register")).click();
-
-		WebDriverWait Wait = new WebDriverWait(driver, 30);
-		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("customer.firstName")));
-
+		openRegisterForm();
 		driver.findElement(By.id("customer.firstName")).sendKeys(sheet.getRow(2).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.lastName")).sendKeys(sheet.getRow(3).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.address.street")).sendKeys(sheet.getRow(4).getCell(1).getStringCellValue());
@@ -141,18 +128,14 @@ public class Registration {
 		driver.findElement(By.id("repeatedPassword")).sendKeys(sheet.getRow(12).getCell(1).getStringCellValue());
 		driver.findElement(By.xpath("//input[@value='Register']")).click();
 		String actualResult = driver.findElement(By.id("customer.address.city.errors")).getText();
+		screenshot("Registration_cityError");
 		return actualResult;
 
 	}
 	
 	public static String stateError() {
 
-		driver.get("https://parabank.parasoft.com/parabank/index.htm");
-		driver.findElement(By.linkText("Register")).click();
-
-		WebDriverWait Wait = new WebDriverWait(driver, 30);
-		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("customer.firstName")));
-
+		openRegisterForm();
 		driver.findElement(By.id("customer.firstName")).sendKeys(sheet.getRow(2).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.lastName")).sendKeys(sheet.getRow(3).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.address.street")).sendKeys(sheet.getRow(4).getCell(1).getStringCellValue());
@@ -165,18 +148,14 @@ public class Registration {
 		driver.findElement(By.id("repeatedPassword")).sendKeys(sheet.getRow(12).getCell(1).getStringCellValue());
 		driver.findElement(By.xpath("//input[@value='Register']")).click();
 		String actualResult = driver.findElement(By.id("customer.address.state.errors")).getText();
+		screenshot("Registration_stateError");
 		return actualResult;
 
 	}
 	
 	public static String zipcodeError() {
 
-		driver.get("https://parabank.parasoft.com/parabank/index.htm");
-		driver.findElement(By.linkText("Register")).click();
-
-		WebDriverWait Wait = new WebDriverWait(driver, 30);
-		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("customer.firstName")));
-
+		openRegisterForm();
 		driver.findElement(By.id("customer.firstName")).sendKeys(sheet.getRow(2).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.lastName")).sendKeys(sheet.getRow(3).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.address.street")).sendKeys(sheet.getRow(4).getCell(1).getStringCellValue());
@@ -189,18 +168,14 @@ public class Registration {
 		driver.findElement(By.id("repeatedPassword")).sendKeys(sheet.getRow(12).getCell(1).getStringCellValue());
 		driver.findElement(By.xpath("//input[@value='Register']")).click();
 		String actualResult = driver.findElement(By.id("customer.address.zipCode.errors")).getText();
+		screenshot("Registration_zipcodeError");
 		return actualResult;
 
 	}
 	
 	public static String withoutPhonenumberRegister() {
 
-		driver.get("https://parabank.parasoft.com/parabank/index.htm");
-		driver.findElement(By.linkText("Register")).click();
-
-		WebDriverWait Wait = new WebDriverWait(driver, 50);
-		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("customer.firstName")));
-
+		openRegisterForm();
 		driver.findElement(By.id("customer.firstName")).sendKeys(sheet.getRow(2).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.lastName")).sendKeys(sheet.getRow(3).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.address.street")).sendKeys(sheet.getRow(4).getCell(1).getStringCellValue());
@@ -222,12 +197,7 @@ public class Registration {
 	
 	public static String ssnError() {
 
-		driver.get("https://parabank.parasoft.com/parabank/index.htm");
-		driver.findElement(By.linkText("Register")).click();
-
-		WebDriverWait Wait = new WebDriverWait(driver, 30);
-		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("customer.firstName")));
-
+		openRegisterForm();
 		driver.findElement(By.id("customer.firstName")).sendKeys(sheet.getRow(2).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.lastName")).sendKeys(sheet.getRow(3).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.address.street")).sendKeys(sheet.getRow(4).getCell(1).getStringCellValue());
@@ -240,18 +210,14 @@ public class Registration {
 		driver.findElement(By.id("repeatedPassword")).sendKeys(sheet.getRow(12).getCell(1).getStringCellValue());
 		driver.findElement(By.xpath("//input[@value='Register']")).click();
 		String actualResult = driver.findElement(By.id("customer.ssn.errors")).getText();
+		screenshot("Registration_ssnError");
 		return actualResult;
 
 	}
 	
 	public static String usernameError() {
 
-		driver.get("https://parabank.parasoft.com/parabank/index.htm");
-		driver.findElement(By.linkText("Register")).click();
-
-		WebDriverWait Wait = new WebDriverWait(driver, 30);
-		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("customer.firstName")));
-
+		openRegisterForm();
 		driver.findElement(By.id("customer.firstName")).sendKeys(sheet.getRow(2).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.lastName")).sendKeys(sheet.getRow(3).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.address.street")).sendKeys(sheet.getRow(4).getCell(1).getStringCellValue());
@@ -264,18 +230,14 @@ public class Registration {
 		driver.findElement(By.id("repeatedPassword")).sendKeys(sheet.getRow(12).getCell(1).getStringCellValue());
 		driver.findElement(By.xpath("//input[@value='Register']")).click();
 		String actualResult = driver.findElement(By.id("customer.username.errors")).getText();
+		screenshot("Registration_usernameError");
 		return actualResult;
 
 	}
 	
 	public static String passwordError() {
 
-		driver.get("https://parabank.parasoft.com/parabank/index.htm");
-		driver.findElement(By.linkText("Register")).click();
-
-		WebDriverWait Wait = new WebDriverWait(driver, 30);
-		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("customer.firstName")));
-
+		openRegisterForm();
 		driver.findElement(By.id("customer.firstName")).sendKeys(sheet.getRow(2).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.lastName")).sendKeys(sheet.getRow(3).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.address.street")).sendKeys(sheet.getRow(4).getCell(1).getStringCellValue());
@@ -288,18 +250,14 @@ public class Registration {
 		driver.findElement(By.id("repeatedPassword")).sendKeys(sheet.getRow(12).getCell(1).getStringCellValue());
 		driver.findElement(By.xpath("//input[@value='Register']")).click();
 		String actualResult = driver.findElement(By.id("customer.password.errors")).getText();
+		screenshot("Registration_passwordError");
 		return actualResult;
 
 	}
 	
 	public static String confirmPasswordError() {
 
-		driver.get("https://parabank.parasoft.com/parabank/index.htm");
-		driver.findElement(By.linkText("Register")).click();
-
-		WebDriverWait Wait = new WebDriverWait(driver, 30);
-		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("customer.firstName")));
-
+		openRegisterForm();
 		driver.findElement(By.id("customer.firstName")).sendKeys(sheet.getRow(2).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.lastName")).sendKeys(sheet.getRow(3).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.address.street")).sendKeys(sheet.getRow(4).getCell(1).getStringCellValue());
@@ -312,19 +270,14 @@ public class Registration {
 		driver.findElement(By.id("customer.password")).sendKeys(sheet.getRow(11).getCell(1).getStringCellValue());
 		driver.findElement(By.xpath("//input[@value='Register']")).click();
 		String actualResult = driver.findElement(By.id("repeatedPassword.errors")).getText();
+		screenshot("Registration_confirmPasswordError");
 		return actualResult;
 
 	}
 	
 	public static String passwordMismatchError() {
-
 		
-		driver.get("https://parabank.parasoft.com/parabank/index.htm");
-		driver.findElement(By.linkText("Register")).click();
-
-		WebDriverWait Wait = new WebDriverWait(driver, 30);
-		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("customer.firstName")));
-
+		openRegisterForm();
 		driver.findElement(By.id("customer.firstName")).sendKeys(sheet.getRow(2).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.lastName")).sendKeys(sheet.getRow(3).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.address.street")).sendKeys(sheet.getRow(4).getCell(1).getStringCellValue());
@@ -338,6 +291,7 @@ public class Registration {
 		driver.findElement(By.id("repeatedPassword")).sendKeys(sheet.getRow(13).getCell(1).getStringCellValue());
 		driver.findElement(By.xpath("//input[@value='Register']")).click();
 		String actualResult = driver.findElement(By.id("repeatedPassword.errors")).getText();
+		screenshot("Registration_passwordMismatchError");
 		return actualResult;
 	}
 

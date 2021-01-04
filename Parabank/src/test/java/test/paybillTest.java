@@ -14,7 +14,7 @@ public class paybillTest {
 	static ExtentReports report = ExtendReport.report;
 	static ExtentTest logger;
 
-	@Test(priority=1)
+	@Test(priority=1,groups= {"SmokeTesting","RegressionTesting"})
 	public static void validBillPay() {
 		logger = report.createTest("Valid BillPay");
 		String success = PayBills.paybill();
@@ -23,7 +23,7 @@ public class paybillTest {
 		Assert.assertEquals(success, "ParaBank | Bill Payment Complete");
 		logger.log(Status.PASS, "Bill Payment successful.");
 	}
-    @Test(priority=2)
+    @Test(priority=2,groups= {"SmokeTesting","RegressionTesting"})
 	public static void invalidBillPay() {
     	
     	logger = report.createTest("Invalid BillPay");

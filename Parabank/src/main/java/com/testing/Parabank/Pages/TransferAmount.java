@@ -6,7 +6,15 @@ import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.support.ui.Select;
 
+import com.testing.Parabank.ExtensionMethods.ScreenShot;
+import com.testing.Parabank.TestBase.DriverSetup;
+
 public class TransferAmount {
+	
+	 public static void screenshot(String name) {
+		   WebDriver driver = DriverSetup.driver;
+	    	ScreenShot.takeScreenshot(driver, name);
+	    }
 	
 	public static String transferringFunds(WebDriver driver) throws Exception { //Positive Test
 		
@@ -36,7 +44,7 @@ public class TransferAmount {
 		account1.selectByIndex(0);
 		Select account2 = new Select(driver.findElement(By.id("toAccountId")));
 		account2.selectByIndex(0);
-		System.out.println("Account Selected");
+		
 		
 		driver.findElement(By.xpath("//input[@class=\"button\"]")).click();
 		
@@ -54,12 +62,13 @@ public class TransferAmount {
 		account1.selectByIndex(0);
 		Select account2 = new Select(driver.findElement(By.id("toAccountId")));
 		account2.selectByIndex(0);
-		System.out.println("Account Selected");
+		
 		
 		driver.findElement(By.xpath("//input[@class=\"button\"]")).click();
 		
 		Thread.sleep(5000);
 		String ssString = driver.findElement(By.xpath("//p[@id='amount.errors']")).getText();
+		screenshot("Transferamount_invalidamoutnError");
 		return ssString;
 		
 	}
@@ -73,7 +82,7 @@ public class TransferAmount {
 		account1.selectByIndex(0);
 		Select account2 = new Select(driver.findElement(By.id("toAccountId")));
 		account2.selectByIndex(0);
-		System.out.println("Account Selected");
+		
 		
 		driver.findElement(By.xpath("//input[@class=\"button\"]")).click();
 		
