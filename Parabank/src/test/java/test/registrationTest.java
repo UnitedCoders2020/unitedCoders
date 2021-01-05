@@ -13,27 +13,27 @@ import com.testing.Parabank.Pages.Registration;
 
 public class registrationTest extends Registration{
 	
-	//static ExtentReports report = ExtendReport.getReportInstance();
-	//static ExtentTest logger;
+	static ExtentReports report = ExtendReport.getReportInstance();
+	static ExtentTest logger;
 	
-	//@Test(priority=1,groups= {"SmokeTesting","RegressionTesting"})
-	@Test
+	@Test(priority=1,groups= {"SmokeTesting","RegressionTesting"})
+	
 	public static void validRegistration() {
 		
-		//logger = report.createTest("Registration is successful");
+		logger = report.createTest("Registration is successful");
 
 		String success = Registration.register();
-		//String noPhoneNumber = Registration.withoutPhonenumberRegister();
+		String noPhoneNumber = Registration.withoutPhonenumberRegister();
 		
 		Assert.assertEquals(success, "Your account was created successfully. You are now logged in.");
-		//logger.log(Status.INFO, "Registration successfull with valid inputs.");
-		//Assert.assertEquals(noPhoneNumber, "Your account was created successfully. You are now logged in.");
-		//logger.log(Status.INFO, "Registration successfull without phone number.");
-		//logger.log(Status.PASS, "Valid registration done.");
+		logger.log(Status.INFO, "Registration successfull with valid inputs.");
+		Assert.assertEquals(noPhoneNumber, "Your account was created successfully. You are now logged in.");
+		logger.log(Status.INFO, "Registration successfull without phone number.");
+		logger.log(Status.PASS, "Valid registration done.");
 	}
 	
 	
-   /*// @Test(priority=2,groups= {"RegressionTesting"})
+    @Test(priority=2,groups= {"RegressionTesting"})
 	public static void invalidRegistration() {
 
     	logger = report.createTest("Registration error messages.");
@@ -75,8 +75,5 @@ public class registrationTest extends Registration{
 
 		logger.log(Status.PASS, "Invalid registration error message is recieved.");
 	}
-    @AfterClass
-	public static void closeBrowser() {
-		report.flush();
-	}*/
+    
 }
