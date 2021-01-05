@@ -13,7 +13,7 @@ import com.testing.Parabank.Utils.ReadingExcel;
 
 public class Registration {
 
-	static WebDriver driver=DriverSetup.invokeDriver("FirefoxDriver_WindowsOS");
+	static WebDriver driver=DriverSetup.invokeDriver("ChromeDriver_WindowsOS");
 	static XSSFSheet sheet=ReadingExcel.getDataFromExcel();
     static WebDriverWait Wait = new WebDriverWait(driver, 50);
     
