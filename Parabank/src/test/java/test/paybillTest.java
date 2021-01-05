@@ -23,7 +23,7 @@ public class paybillTest {
 		Assert.assertEquals(success, "ParaBank | Bill Payment Complete");
 		logger.log(Status.PASS, "Bill Payment successful.");
 	}
-    @Test(priority=2,groups= {"SmokeTesting","RegressionTesting"})
+    @Test(priority=2,groups= {"RegressionTesting"})
 	public static void invalidBillPay() {
     	
     	logger = report.createTest("Invalid BillPay");

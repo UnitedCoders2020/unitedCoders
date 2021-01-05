@@ -24,7 +24,7 @@ public class updateinfoTest extends UpdateInfo {
 
 	}
 
-	@Test(priority = 2,groups= {"SmokeTesting","RegressionTesting"})
+	@Test(priority = 2,groups= {"RegressionTesting"})
 	public static void invalidUpdate() {
 		logger = report.createTest("Invalid Update Information");
 

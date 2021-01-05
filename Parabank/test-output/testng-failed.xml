@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [ParabankWebsiteTest]">
-  <test name="Smoke And Regression Testing(failed)">
-    <groups>
-      <run>
-        <include name="SmokeTesting"/>
-        <include name="RegressionTesting"/>
-      </run>
-    </groups>
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
-      <class name="test.paybillTest">
+      <class name="test.registrationTest">
         <methods>
-          <include name="invalidBillPay"/>
+          <include name="validRegistration"/>
         </methods>
-      </class> <!-- test.paybillTest -->
-      <class name="test.TransferAmountTest">
-        <methods>
-          <include name="transferringAmount"/>
-        </methods>
-      </class> <!-- test.TransferAmountTest -->
+      </class> <!-- test.registrationTest -->
     </classes>
-  </test> <!-- Smoke And Regression Testing(failed) -->
-</suite> <!-- Failed suite [ParabankWebsiteTest] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

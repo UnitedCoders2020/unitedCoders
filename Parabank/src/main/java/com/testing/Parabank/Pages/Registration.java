@@ -26,26 +26,37 @@ public class Registration {
     	ScreenShot.takeScreenshot(driver, name);
     }
     
+    public static void click(By by) {
+    	Wait.until(ExpectedConditions.elementToBeClickable(by));
+    	driver.findElement(by).click();
+    }
+    
+    public static void sendText(By by,String text) {
+    	Wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+    	driver.findElement(by).sendKeys(text);
+    }
+    
 	public static String register() {
 		
 		openRegisterForm();
-		driver.findElement(By.id("customer.firstName")).sendKeys(sheet.getRow(2).getCell(1).getStringCellValue());
-		driver.findElement(By.id("customer.lastName")).sendKeys(sheet.getRow(3).getCell(1).getStringCellValue());
-		driver.findElement(By.id("customer.address.street")).sendKeys(sheet.getRow(4).getCell(1).getStringCellValue());
-		driver.findElement(By.id("customer.address.city")).sendKeys(sheet.getRow(5).getCell(1).getStringCellValue());
-		driver.findElement(By.id("customer.address.state")).sendKeys(sheet.getRow(6).getCell(1).getStringCellValue());
-		driver.findElement(By.id("customer.address.zipCode")).sendKeys(sheet.getRow(7).getCell(1).getStringCellValue());
-		driver.findElement(By.id("customer.phoneNumber")).sendKeys(sheet.getRow(8).getCell(1).getStringCellValue());
-		driver.findElement(By.id("customer.ssn")).sendKeys(sheet.getRow(9).getCell(1).getStringCellValue());
-		driver.findElement(By.id("customer.username")).sendKeys(sheet.getRow(10).getCell(1).getStringCellValue());
-		driver.findElement(By.id("customer.password")).sendKeys(sheet.getRow(11).getCell(1).getStringCellValue());
-		driver.findElement(By.id("repeatedPassword")).sendKeys(sheet.getRow(12).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@value='Register']")).click();
+		sendText(By.id("customer.firstName"),sheet.getRow(2).getCell(1).getStringCellValue());
+		sendText(By.id("customer.lastName"),sheet.getRow(3).getCell(1).getStringCellValue());
+		sendText(By.id("customer.address.street"),sheet.getRow(4).getCell(1).getStringCellValue());
+		sendText(By.id("customer.address.city"),sheet.getRow(5).getCell(1).getStringCellValue());
+		sendText(By.id("customer.address.state"),sheet.getRow(6).getCell(1).getStringCellValue());
+		sendText(By.id("customer.address.zipCode"),sheet.getRow(7).getCell(1).getStringCellValue());
+		sendText(By.id("customer.phoneNumber"),sheet.getRow(8).getCell(1).getStringCellValue());
+		sendText(By.id("customer.ssn"),sheet.getRow(9).getCell(1).getStringCellValue());
+		sendText(By.id("customer.username"),sheet.getRow(10).getCell(1).getStringCellValue());
+		sendText(By.id("customer.password"),sheet.getRow(11).getCell(1).getStringCellValue());
+		sendText(By.id("repeatedPassword"),sheet.getRow(12).getCell(1).getStringCellValue());
+		click(By.xpath("//input[@value='Register']"));
 
 		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='rightPanel']/p")));
 
 		String actualResult = driver.findElement(By.xpath("//div[@id='rightPanel']/p")).getText();
-		driver.findElement(By.linkText("Log Out")).click();
+		click(By.linkText("Log Out"));
+		
 		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Register")));
 		return actualResult;
 
@@ -65,7 +76,7 @@ public class Registration {
 		driver.findElement(By.id("customer.username")).sendKeys(sheet.getRow(10).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.password")).sendKeys(sheet.getRow(11).getCell(1).getStringCellValue());
 		driver.findElement(By.id("repeatedPassword")).sendKeys(sheet.getRow(12).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@value='Register']")).click();
+		click(By.xpath("//input[@value='Register']"));
 		String actualResult = driver.findElement(By.id("customer.firstName.errors")).getText();
 		screenshot("Registration_firstnameError");
 		return actualResult;
@@ -86,7 +97,7 @@ public class Registration {
 		driver.findElement(By.id("customer.username")).sendKeys(sheet.getRow(10).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.password")).sendKeys(sheet.getRow(11).getCell(1).getStringCellValue());
 		driver.findElement(By.id("repeatedPassword")).sendKeys(sheet.getRow(12).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@value='Register']")).click();
+		click(By.xpath("//input[@value='Register']"));
 		String actualResult = driver.findElement(By.id("customer.lastName.errors")).getText();
 		screenshot("Registration_lastnameError");
 		return actualResult;
@@ -106,7 +117,7 @@ public class Registration {
 		driver.findElement(By.id("customer.username")).sendKeys(sheet.getRow(10).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.password")).sendKeys(sheet.getRow(11).getCell(1).getStringCellValue());
 		driver.findElement(By.id("repeatedPassword")).sendKeys(sheet.getRow(12).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@value='Register']")).click();
+		click( By.xpath("//input[@value='Register']"));
 		String errMessage = driver.findElement(By.id("customer.address.street.errors")).getText();
 		screenshot("Registration_addressError");
 		return errMessage;
@@ -126,7 +137,7 @@ public class Registration {
 		driver.findElement(By.id("customer.username")).sendKeys(sheet.getRow(10).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.password")).sendKeys(sheet.getRow(11).getCell(1).getStringCellValue());
 		driver.findElement(By.id("repeatedPassword")).sendKeys(sheet.getRow(12).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@value='Register']")).click();
+		click(By.xpath("//input[@value='Register']"));
 		String actualResult = driver.findElement(By.id("customer.address.city.errors")).getText();
 		screenshot("Registration_cityError");
 		return actualResult;
@@ -146,7 +157,7 @@ public class Registration {
 		driver.findElement(By.id("customer.username")).sendKeys(sheet.getRow(10).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.password")).sendKeys(sheet.getRow(11).getCell(1).getStringCellValue());
 		driver.findElement(By.id("repeatedPassword")).sendKeys(sheet.getRow(12).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@value='Register']")).click();
+		click( By.xpath("//input[@value='Register']"));
 		String actualResult = driver.findElement(By.id("customer.address.state.errors")).getText();
 		screenshot("Registration_stateError");
 		return actualResult;
@@ -166,7 +177,7 @@ public class Registration {
 		driver.findElement(By.id("customer.username")).sendKeys(sheet.getRow(10).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.password")).sendKeys(sheet.getRow(11).getCell(1).getStringCellValue());
 		driver.findElement(By.id("repeatedPassword")).sendKeys(sheet.getRow(12).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@value='Register']")).click();
+		click(By.xpath("//input[@value='Register']"));
 		String actualResult = driver.findElement(By.id("customer.address.zipCode.errors")).getText();
 		screenshot("Registration_zipcodeError");
 		return actualResult;
@@ -186,7 +197,7 @@ public class Registration {
 		driver.findElement(By.id("customer.username")).sendKeys(sheet.getRow(10).getCell(1).getStringCellValue()+"aa");
 		driver.findElement(By.id("customer.password")).sendKeys(sheet.getRow(11).getCell(1).getStringCellValue());
 		driver.findElement(By.id("repeatedPassword")).sendKeys(sheet.getRow(12).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@value='Register']")).click();
+		click(By.xpath("//input[@value='Register']"));
 		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='rightPanel']/p")));
 
 		String actualResult = driver.findElement(By.xpath("//div[@id='rightPanel']/p")).getText();
@@ -208,7 +219,7 @@ public class Registration {
 		driver.findElement(By.id("customer.username")).sendKeys(sheet.getRow(10).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.password")).sendKeys(sheet.getRow(11).getCell(1).getStringCellValue());
 		driver.findElement(By.id("repeatedPassword")).sendKeys(sheet.getRow(12).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@value='Register']")).click();
+		click(By.xpath("//input[@value='Register']"));
 		String actualResult = driver.findElement(By.id("customer.ssn.errors")).getText();
 		screenshot("Registration_ssnError");
 		return actualResult;
@@ -228,7 +239,7 @@ public class Registration {
 		driver.findElement(By.id("customer.ssn")).sendKeys(sheet.getRow(9).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.password")).sendKeys(sheet.getRow(11).getCell(1).getStringCellValue());
 		driver.findElement(By.id("repeatedPassword")).sendKeys(sheet.getRow(12).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@value='Register']")).click();
+		click(By.xpath("//input[@value='Register']"));
 		String actualResult = driver.findElement(By.id("customer.username.errors")).getText();
 		screenshot("Registration_usernameError");
 		return actualResult;
@@ -248,7 +259,7 @@ public class Registration {
 		driver.findElement(By.id("customer.ssn")).sendKeys(sheet.getRow(9).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.username")).sendKeys(sheet.getRow(10).getCell(1).getStringCellValue());
 		driver.findElement(By.id("repeatedPassword")).sendKeys(sheet.getRow(12).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@value='Register']")).click();
+		click(By.xpath("//input[@value='Register']"));
 		String actualResult = driver.findElement(By.id("customer.password.errors")).getText();
 		screenshot("Registration_passwordError");
 		return actualResult;
@@ -268,7 +279,7 @@ public class Registration {
 		driver.findElement(By.id("customer.ssn")).sendKeys(sheet.getRow(9).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.username")).sendKeys(sheet.getRow(10).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.password")).sendKeys(sheet.getRow(11).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@value='Register']")).click();
+		click( By.xpath("//input[@value='Register']"));
 		String actualResult = driver.findElement(By.id("repeatedPassword.errors")).getText();
 		screenshot("Registration_confirmPasswordError");
 		return actualResult;
@@ -289,7 +300,7 @@ public class Registration {
 		driver.findElement(By.id("customer.username")).sendKeys(sheet.getRow(10).getCell(1).getStringCellValue());
 		driver.findElement(By.id("customer.password")).sendKeys(sheet.getRow(11).getCell(1).getStringCellValue());
 		driver.findElement(By.id("repeatedPassword")).sendKeys(sheet.getRow(13).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@value='Register']")).click();
+		click(By.xpath("//input[@value='Register']"));
 		String actualResult = driver.findElement(By.id("repeatedPassword.errors")).getText();
 		screenshot("Registration_passwordMismatchError");
 		return actualResult;

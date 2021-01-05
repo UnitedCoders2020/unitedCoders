@@ -22,7 +22,6 @@ public class OpenAccount {
 	public static String open() {
 		
 		driver=DriverSetup.driver;
-		
 		driver.findElement(By.name("username")).sendKeys(sheet.getRow(10).getCell(1).getStringCellValue());
 		driver.findElement(By.name("password")).sendKeys(sheet.getRow(11).getCell(1).getStringCellValue());
 		driver.findElement(By.xpath("//input[@value=\"Log In\"]")).click();
