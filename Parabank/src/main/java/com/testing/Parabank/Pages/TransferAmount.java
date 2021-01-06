@@ -3,13 +3,19 @@ package com.testing.Parabank.Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.testing.Parabank.ExtensionMethods.ScreenShot;
 import com.testing.Parabank.TestBase.DriverSetup;
 
 public class TransferAmount {
+	
+	public static void click(WebDriver driver, By by) {
+		(new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeClickable(by));
+		driver.findElement(by).click();
+	}
 	
 	 public static void screenshot(String name) {
 		   WebDriver driver = DriverSetup.driver;
@@ -18,7 +24,7 @@ public class TransferAmount {
 	
 	public static String transferringFunds(WebDriver driver) throws Exception { //Positive Test
 		
-		driver.findElement(By.linkText("Transfer Funds")).click();
+		click(driver, By.linkText("Transfer Funds"));
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//input[@id='amount']")).sendKeys("20000");
 		
@@ -28,7 +34,7 @@ public class TransferAmount {
 		account2.selectByIndex(1);
 		
 		
-		driver.findElement(By.xpath("//input[@class=\"button\"]")).click();
+		click(driver, By.xpath("//input[@class=\"button\"]"));
 		
 		Thread.sleep(5000);
 		String ssString = driver.findElement(By.xpath("//div[@class=\"ng-scope\"]/p[1]")).getText();
@@ -36,7 +42,7 @@ public class TransferAmount {
 		
 	}
 	public static String checkingAmount(WebDriver driver) throws InterruptedException { // Giving Negative Amount
-		driver.findElement(By.linkText("Transfer Funds")).click();
+		click(driver, By.linkText("Transfer Funds"));
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//input[@id='amount']")).sendKeys("-10000");
 		
@@ -46,7 +52,7 @@ public class TransferAmount {
 		account2.selectByIndex(1);
 		
 		
-		driver.findElement(By.xpath("//input[@class=\"button\"]")).click();
+		click(driver, By.xpath("//input[@class=\"button\"]"));
 		
 		Thread.sleep(5000);
 		String ssString = driver.findElement(By.xpath("//div[@class=\"ng-scope\"]/p[1]")).getText();
@@ -54,7 +60,7 @@ public class TransferAmount {
 	}
 	
 	public static String checkingAmountType(WebDriver driver) throws InterruptedException { //Giving invalid Amount
-		driver.findElement(By.linkText("Transfer Funds")).click();
+		click(driver, By.linkText("Transfer Funds"));
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//input[@id='amount']")).sendKeys("aaaaa");
 		
@@ -64,7 +70,7 @@ public class TransferAmount {
 		account2.selectByIndex(1);
 		
 		
-		driver.findElement(By.xpath("//input[@class=\"button\"]")).click();
+		click(driver, By.xpath("//input[@class=\"button\"]"));
 		
 		Thread.sleep(5000);
 		String ssString = driver.findElement(By.xpath("//p[@id='amount.errors']")).getText();
@@ -74,7 +80,7 @@ public class TransferAmount {
 	}
 	
 	public static String checkingAmountRange(WebDriver driver) throws InterruptedException { //Going above [1-9] * 10^14
-		driver.findElement(By.linkText("Transfer Funds")).click();
+		click(driver, By.linkText("Transfer Funds"));
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//input[@id='amount']")).sendKeys("999999999999");
 		
@@ -84,7 +90,7 @@ public class TransferAmount {
 		account2.selectByIndex(1);
 		
 		
-		driver.findElement(By.xpath("//input[@class=\"button\"]")).click();
+		click(driver, By.xpath("//input[@class=\"button\"]"));
 		
 		Thread.sleep(5000);
 		String ssString = driver.findElement(By.xpath("//div[@class='ng-scope']/p")).getText();
@@ -93,14 +99,14 @@ public class TransferAmount {
 		
 		
 	}
-	public static String noAmountGiven(WebDriver driver) throws InterruptedException{
-		driver.findElement(By.linkText("Transfer Funds")).click();
+	public static String noAmountGiven(WebDriver driver) throws InterruptedException{ //Amount field is kept blank
+		click(driver, By.linkText("Transfer Funds"));
 		Thread.sleep(3000);
 		Select account1 = new Select(driver.findElement(By.id("fromAccountId")));
 		account1.selectByIndex(0);
 		Select account2 = new Select(driver.findElement(By.id("toAccountId")));
 		account2.selectByIndex(1);
-		driver.findElement(By.xpath("//input[@class=\"button\"]")).click();
+		click(driver, By.xpath("//input[@class=\"button\"]"));
 		
 		Thread.sleep(5000);
 		String ssString = driver.findElement(By.xpath("//p[@id='amount.errors']")).getText();
