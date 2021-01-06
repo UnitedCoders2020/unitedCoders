@@ -25,7 +25,7 @@ public class TransferAmount {
 		Select account1 = new Select(driver.findElement(By.id("fromAccountId")));
 		account1.selectByIndex(0);
 		Select account2 = new Select(driver.findElement(By.id("toAccountId")));
-		account2.selectByIndex(0);
+		account2.selectByIndex(1);
 		
 		
 		driver.findElement(By.xpath("//input[@class=\"button\"]")).click();
@@ -43,7 +43,7 @@ public class TransferAmount {
 		Select account1 = new Select(driver.findElement(By.id("fromAccountId")));
 		account1.selectByIndex(0);
 		Select account2 = new Select(driver.findElement(By.id("toAccountId")));
-		account2.selectByIndex(0);
+		account2.selectByIndex(1);
 		
 		
 		driver.findElement(By.xpath("//input[@class=\"button\"]")).click();
@@ -61,7 +61,7 @@ public class TransferAmount {
 		Select account1 = new Select(driver.findElement(By.id("fromAccountId")));
 		account1.selectByIndex(0);
 		Select account2 = new Select(driver.findElement(By.id("toAccountId")));
-		account2.selectByIndex(0);
+		account2.selectByIndex(1);
 		
 		
 		driver.findElement(By.xpath("//input[@class=\"button\"]")).click();
@@ -81,7 +81,7 @@ public class TransferAmount {
 		Select account1 = new Select(driver.findElement(By.id("fromAccountId")));
 		account1.selectByIndex(0);
 		Select account2 = new Select(driver.findElement(By.id("toAccountId")));
-		account2.selectByIndex(0);
+		account2.selectByIndex(1);
 		
 		
 		driver.findElement(By.xpath("//input[@class=\"button\"]")).click();
@@ -91,6 +91,20 @@ public class TransferAmount {
 		
 		return ssString;
 		
+		
+	}
+	public static String noAmountGiven(WebDriver driver) throws InterruptedException{
+		driver.findElement(By.linkText("Transfer Funds")).click();
+		Thread.sleep(3000);
+		Select account1 = new Select(driver.findElement(By.id("fromAccountId")));
+		account1.selectByIndex(0);
+		Select account2 = new Select(driver.findElement(By.id("toAccountId")));
+		account2.selectByIndex(1);
+		driver.findElement(By.xpath("//input[@class=\"button\"]")).click();
+		
+		Thread.sleep(5000);
+		String ssString = driver.findElement(By.xpath("//p[@id='amount.errors']")).getText();
+		return ssString;
 		
 	}
 }

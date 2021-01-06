@@ -37,10 +37,12 @@ public class TransferAmountTest extends TransferAmount{
 		test.log(Status.PASS,ssString2);
 		test.log(Status.INFO, "Passing invalid characters");
 		String ssString3 = TransferAmount.checkingAmountType(driver);
-		test.log(Status.FAIL, ssString3);
+		test.log(Status.PASS, ssString3);
 		test.log(Status.INFO, "Transferring large amount");
 		String ssString4 = TransferAmount.checkingAmountRange(driver);
 		test.log(Status.PASS, ssString4);
+		String ssString5 = TransferAmount.noAmountGiven(driver);
+		test.log(Status.PASS, ssString5);
 		
 	}
 	

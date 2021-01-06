@@ -20,7 +20,7 @@ public class DriverSetup {
 			System.setProperty("webdriver.chrome.driver", path+chromeDriverPath);
 			
 			driver= new ChromeDriver();	
-			driver.get("https://parabank.parasoft.com/parabank/index.html");
+			driver.get("https://parabank.parasoft.com/parabank/index.htm");
 		}
 		//Invoking Firefox Driver in WindowsOS
 		else if (browserName.equalsIgnoreCase("FirefoxDriver_WindowsOS")) {
@@ -29,7 +29,7 @@ public class DriverSetup {
 			System.setProperty("webdriver.gecko.driver", path+firefoxDriverPath);
 			
 			driver= new FirefoxDriver();
-			driver.get("https://parabank.parasoft.com/parabank/index.html");
+			driver.get("https://parabank.parasoft.com/parabank/index.htm");
 		}
 		//Invoking Opera Driver in WindowsOS
 		else if(browserName.equalsIgnoreCase("OperaDriver_WindowsOS")) {
@@ -38,7 +38,7 @@ public class DriverSetup {
 			System.setProperty("webdriver.opera.driver", path+operaDriverPath);
 			
 			driver= new OperaDriver();
-			driver.get("https://parabank.parasoft.com/parabank/index.html");
+			driver.get("https://parabank.parasoft.com/parabank/index.htm");
 		}
 		//Invoking Chrome Driver in MacOS
 		else if (browserName.equalsIgnoreCase("ChromeDriver_MacOS")) {
@@ -47,7 +47,7 @@ public class DriverSetup {
 			System.setProperty("webdriver.chrome.driver", path+chromeDriverPath);
 			
 			driver= new ChromeDriver();	
-			driver.get("https://parabank.parasoft.com/parabank/index.html");
+			driver.get("https://parabank.parasoft.com/parabank/index.htm");
 		}
 		//Invoking Opera Driver in MacOS
 		else if(browserName.equalsIgnoreCase("OperaDriver_MacOS")) {
@@ -56,7 +56,7 @@ public class DriverSetup {
 			System.setProperty("webdriver.opera.driver", path+operaDriverPath);
 			
 			driver= new OperaDriver();
-			driver.get("https://parabank.parasoft.com/parabank/index.html");
+			driver.get("https://parabank.parasoft.com/parabank/index.htm");
 		}
 		//Returning the Driver
 		return driver;
