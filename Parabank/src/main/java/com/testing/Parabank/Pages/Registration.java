@@ -4,14 +4,19 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.testing.Parabank.ExtensionMethods.ScreenShot;
 import com.testing.Parabank.TestBase.DriverSetup;
 import com.testing.Parabank.Utils.ReadingExcel;
+import com.testing.Parabank.Utils.SeleniumExtensionMethod;
 
 public class Registration {
+	 @FindBy(how = How.ID, using = "customer.firstName")
+	  private static WebElement firstName;
 
 	static WebDriver driver=DriverSetup.invokeDriver("ChromeDriver_WindowsOS");
 	static XSSFSheet sheet=ReadingExcel.getDataFromExcel();
@@ -37,11 +42,14 @@ public class Registration {
     	driver.findElement(by).sendKeys(text);
     	
     }
+   
+
     
 	public static String register() {
 		
 		openRegisterForm();
-		sendText(By.id("customer.firstName"),sheet.getRow(2).getCell(1).getStringCellValue());
+		//sendText(By.id("customer.firstName"),sheet.getRow(2).getCell(1).getStringCellValue());
+		SeleniumExtensionMethod.enterText(firstName,sheet.getRow(2).getCell(1).getStringCellValue());
 		sendText(By.id("customer.lastName"),sheet.getRow(3).getCell(1).getStringCellValue());
 		sendText(By.id("customer.address.street"),sheet.getRow(4).getCell(1).getStringCellValue());
 		sendText(By.id("customer.address.city"),sheet.getRow(5).getCell(1).getStringCellValue());
