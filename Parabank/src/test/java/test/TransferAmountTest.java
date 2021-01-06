@@ -41,6 +41,7 @@ public class TransferAmountTest extends TransferAmount{
 		test.log(Status.INFO, "Transferring large amount");
 		String ssString4 = TransferAmount.checkingAmountRange(driver);
 		test.log(Status.PASS, ssString4);
+		test.log(Status.INFO, "Giving no amount");
 		String ssString5 = TransferAmount.noAmountGiven(driver);
 		test.log(Status.PASS, ssString5);
 		
