@@ -1,176 +1,191 @@
 package com.testing.Parabank.Pages;
 
-import java.util.concurrent.TimeUnit;
-
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import com.testing.Parabank.ExtensionMethods.ScreenShot;
 import com.testing.Parabank.TestBase.DriverSetup;
 import com.testing.Parabank.Utils.ReadingExcel;
 
 public class UpdateInfo {
-	static WebDriver driver;
-	static XSSFSheet sheet=ReadingExcel.sheet;
 	
-	 public static void screenshot(String name) {
-		    
-	    	ScreenShot.takeScreenshot(driver, name);
-	    }
+	@FindBy(how=How.ID,using="customer.firstName")
+	static WebElement firstname;
+	@FindBy(how=How.ID,using="customer.lastName")
+	static WebElement lastname;
+	@FindBy(how=How.ID,using="customer.address.street")
+	static WebElement address;
+	@FindBy(how=How.ID,using="customer.address.city")
+	static WebElement city;
+	@FindBy(how=How.ID,using="customer.address.state")
+	static WebElement state;
+	@FindBy(how=How.ID,using="customer.address.zipCode")
+	static WebElement zipcode;
+	@FindBy(how=How.ID,using="customer.phoneNumber")
+	static WebElement phonenumber;
+	@FindBy(xpath="//input[@value='Update Profile']")
+	static WebElement button;
+	@FindBy(how=How.XPATH,using="//p[contains(text(),'Your updated address and phone number have been ad')]")
+	static WebElement success;
+	
+	static WebDriver driver=DriverSetup.invokeDriver("ChromeDriver_WindowsOS");
+	static XSSFSheet sheet=ReadingExcel.getDataFromExcel();
+    static WebDriverWait Wait = new WebDriverWait(driver, 50);
    
-	public static String update()  {
-
-		driver = DriverSetup.driver;
-		driver.findElement(By.xpath("//a[contains(text(),'Update Contact Info')]")).click();
-
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-		driver.findElement(By.xpath("//input[@id='customer.firstName']")).sendKeys(sheet.getRow(2).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.lastName']")).sendKeys(sheet.getRow(3).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.address.street']")).sendKeys(sheet.getRow(4).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.address.city']")).sendKeys(sheet.getRow(5).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.address.state']")).sendKeys(sheet.getRow(6).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.address.zipCode']")).sendKeys(sheet.getRow(7).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.phoneNumber']")).sendKeys(sheet.getRow(8).getCell(1).getStringCellValue());
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			
-			e.printStackTrace();
-		}
-		driver.findElement(By.xpath("//tbody/tr[8]/td[2]/input[1]")).click();
-
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		String result0 = driver
-				.findElement(By.xpath(
-						"//p[contains(text(),'Your updated address and phone number have been added to the system.')]"))
-				.getText();
-		 
+    
+    
+    public UpdateInfo() {
+    	PageFactory.initElements(driver, this);
+    }
+    
+    	
+    	
+    
+    public static void click(WebElement element) {
+    	Wait.until(ExpectedConditions.visibilityOf(element));
+    	element.click();
+    }
+    
+    public static void sendText(WebElement element,String text) {
+    	element.clear();
+    	element.sendKeys(text);
+    	
+    }
+    
+    public static void clear(WebElement element) {
+    	element.clear();
+    }
+    
+    public static void fillUpdateInfoform() {
+    	driver.findElement(By.linkText("Update Contact Info")).click();
+    	Wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("customer.firstName")));
+    	
+    	clear(firstname);
+    	clear(lastname);
+    	clear(address);
+    	clear(city);
+    	clear(state);
+    	clear(zipcode);
+    	clear(phonenumber);
+    	
+    	sendText(firstname,"Ajinkya");
+		sendText(lastname,"Rahane");
+		sendText(address,"Charming Avenue");
+		sendText(city,"Chennai");
+		sendText(state,"Tamil Nadu");
+		sendText(zipcode,"603203");
+		sendText(phonenumber,"932756465");
+    	
+    }
+    
+    
+    public static void screenshot(String name) {
+    	ScreenShot.takeScreenshot(driver, name);
+    }
+    
+    public static String update() {
+    	fillUpdateInfoform();
+    	click(button);
+    	Wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[contains(text(),'Your updated address and phone number have been ad')]")));
+		String result0 = success.getText();
 		return result0;
+    	
+    	
+    }
+    
+    public static String UpdatefnameErr() {
 
-	}
-
-	public static String UpdatefnameErr() {
-
-		driver.findElement(By.xpath("//a[contains(text(),'Update Contact Info')]")).click();
-
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-		driver.findElement(By.xpath("//input[@id='customer.lastName']")).sendKeys(sheet.getRow(3).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.address.street']")).sendKeys(sheet.getRow(4).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.address.city']")).sendKeys(sheet.getRow(5).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.address.state']")).sendKeys(sheet.getRow(6).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.address.zipCode']")).sendKeys(sheet.getRow(7).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.phoneNumber']")).sendKeys(sheet.getRow(8).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//tbody/tr[8]/td[2]/input[1]")).click();
-
+		fillUpdateInfoform();
+		clear(firstname);
+		click(button);
 		String result1 = driver.findElement(By.xpath("//span[contains(text(),'First name is required.')]")).getText();
-		screenshot("UpdateInfo_firstnameError");
+		screenshot("UpdateInfo_fnameErr");
 		return result1;
 
 	}
 
+	
 	public static String UpdatelnameErr() {
 
-		driver.findElement(By.xpath("//a[contains(text(),'Update Contact Info')]")).click();
-
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-		driver.findElement(By.xpath("//input[@id='customer.firstName']")).sendKeys(sheet.getRow(2).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.address.street']")).sendKeys(sheet.getRow(4).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.address.city']")).sendKeys(sheet.getRow(5).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.address.state']")).sendKeys(sheet.getRow(6).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.address.zipCode']")).sendKeys(sheet.getRow(7).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.phoneNumber']")).sendKeys(sheet.getRow(8).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//tbody/tr[8]/td[2]/input[1]")).click();
-
+		fillUpdateInfoform();
+		clear(lastname);
+		click(button);
 		String result2 = driver.findElement(By.xpath("//span[contains(text(),'Last name is required.')]")).getText();
-		screenshot("UpdateInfo_lastnameError");
+		screenshot("UpdateInfo_lnameErr");
 		return result2;
 
 	}
-
+	
 	public static String UpdateaddressErr() {
 
-		driver.findElement(By.xpath("//a[contains(text(),'Update Contact Info')]")).click();
-
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-		driver.findElement(By.xpath("//input[@id='customer.firstName']")).sendKeys(sheet.getRow(2).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.lastName']")).sendKeys(sheet.getRow(3).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.address.city']")).sendKeys(sheet.getRow(5).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.address.state']")).sendKeys(sheet.getRow(6).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.address.zipCode']")).sendKeys(sheet.getRow(7).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.phoneNumber']")).sendKeys(sheet.getRow(8).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//tbody/tr[8]/td[2]/input[1]")).click();
-
+		fillUpdateInfoform();
+		clear(address);
+		click(button);
 		String result3 = driver.findElement(By.xpath("//span[contains(text(),'Address is required.')]")).getText();
-		screenshot("UpdateInfo_addressError");
+		screenshot("UpdateInfo_addressErr");
 		return result3;
 
 	}
-
+	
 	public static String UpdatecityErr() {
 
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-
-		driver.findElement(By.xpath("//a[contains(text(),'Update Contact Info')]")).click();
-
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-		driver.findElement(By.xpath("//input[@id='customer.firstName']")).sendKeys(sheet.getRow(2).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.lastName']")).sendKeys(sheet.getRow(3).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.address.street']")).sendKeys(sheet.getRow(4).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.address.state']")).sendKeys(sheet.getRow(6).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.address.zipCode']")).sendKeys(sheet.getRow(7).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.phoneNumber']")).sendKeys(sheet.getRow(8).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//tbody/tr[8]/td[2]/input[1]")).click();
-
+		fillUpdateInfoform();
+		clear(city);
+		click(button);
 		String result4 = driver.findElement(By.xpath("//span[contains(text(),'City is required.')]")).getText();
-		screenshot("UpdateInfo_cityError");
+		screenshot("UpdateInfo_cityErr");
 		return result4;
 
 	}
-
+	
 	public static String UpdatestateErr() {
 
-		driver.findElement(By.xpath("//a[contains(text(),'Update Contact Info')]")).click();
-
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-		driver.findElement(By.xpath("//input[@id='customer.firstName']")).sendKeys(sheet.getRow(2).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.lastName']")).sendKeys(sheet.getRow(3).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.address.street']")).sendKeys(sheet.getRow(4).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.address.city']")).sendKeys(sheet.getRow(5).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.address.zipCode']")).sendKeys(sheet.getRow(7).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.phoneNumber']")).sendKeys(sheet.getRow(8).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//tbody/tr[8]/td[2]/input[1]")).click();
-
+		fillUpdateInfoform();
+		clear(state);
+		click(button);
 		String result5 = driver.findElement(By.xpath("//span[contains(text(),'State is required.')]")).getText();
-		screenshot("UpdateInfo_stateError");
+		screenshot("UpdateInfo_stateErr");
 		return result5;
 
 	}
-
+	
 	public static String UpdateZipCodeErr() {
 
-		driver.findElement(By.xpath("//a[contains(text(),'Update Contact Info')]")).click();
-
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-		driver.findElement(By.xpath("//input[@id='customer.firstName']")).sendKeys(sheet.getRow(2).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.lastName']")).sendKeys(sheet.getRow(3).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.address.street']")).sendKeys(sheet.getRow(4).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.address.city']")).sendKeys(sheet.getRow(5).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.address.state']")).sendKeys(sheet.getRow(6).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//input[@id='customer.phoneNumber']")).sendKeys(sheet.getRow(8).getCell(1).getStringCellValue());
-		driver.findElement(By.xpath("//tbody/tr[8]/td[2]/input[1]")).click();
-
+		fillUpdateInfoform();
+		clear(zipcode);
+		click(button);
 		String result6 = driver.findElement(By.xpath("//span[contains(text(),'Zip Code is required.')]")).getText();
-		screenshot("UpdateInfo_zipcodeError");
-		driver.quit();
+		screenshot("UpdateInfo_zipcodeErr");
 		return result6;
 
 	}
+	public static String UpdatePhnumber() {
+		
+		fillUpdateInfoform();
+		clear(phonenumber);
+		click(button);
+		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[contains(text(),'Your updated address and phone number have been ad')]")));
+		String result7 = success.getText();
+		screenshot("UpdateInfo_phnumberErr");
+		return result7;
+		
+		
+		
+	}
+    
+    
+    	
+    	
+    	
+    		
+    	
+
 
 }
