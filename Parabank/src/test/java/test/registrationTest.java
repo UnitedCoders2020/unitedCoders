@@ -50,6 +50,16 @@ public class registrationTest extends Registration{
 		String passwordErr = Registration.passwordError();
 		String passwordConfirmErr = Registration.confirmPasswordError();
 		String passwordmismatchErr = Registration.passwordMismatchError();
+		String maxcharfname = Registration.maxcharfname();
+		String maxcharlname = Registration.maxcharlname();
+		String maxcharaddress = Registration.maxcharaddress();
+		String maxcharcity = Registration.maxcharcity();
+		String maxcharstate = Registration.maxcharstate();
+		String maxcharzip = Registration.maxcharzipcode();
+		String maxcharphone = Registration.maxcharphone();
+		String maxcharssn = Registration.maxcharssn();
+		String maxcharuname = Registration.maxcharuser();
+		String maxcharpassword = Registration.maxcharpassword();
 
 		Assert.assertEquals(firstnameErr, "First name is required.");
 		logger.log(Status.INFO, "First name error message verified.");
@@ -73,6 +83,27 @@ public class registrationTest extends Registration{
 		logger.log(Status.INFO, "Confirm password error message verified.");
 		Assert.assertEquals(passwordmismatchErr, "Passwords did not match.");
 		logger.log(Status.INFO, "Matching password error message verified.");
+		Assert.assertEquals(maxcharfname, "This username already exists.");
+		logger.log(Status.INFO, "First name maximum character is verified");
+		Assert.assertEquals(maxcharlname, "This username already exists.");
+		logger.log(Status.INFO, "last name maximum character is verified");
+		Assert.assertEquals(maxcharaddress, "This username already exists.");
+		logger.log(Status.INFO, "Address maximum character is verified");
+		Assert.assertEquals(maxcharcity, "This username already exists.");
+		logger.log(Status.INFO, "City maximum character is verified");
+		Assert.assertEquals(maxcharstate, "This username already exists.");
+		logger.log(Status.INFO, "State maximum character is verified");
+		Assert.assertEquals(maxcharzip, "This username already exists.");
+		logger.log(Status.INFO, "Zipcode maximum character is verified");
+		Assert.assertEquals(maxcharphone, "This username already exists.");
+		logger.log(Status.INFO, "Phone number maximum character is verified");
+		Assert.assertEquals(maxcharssn, "This username already exists.");
+		logger.log(Status.INFO, "SSN maximum character is verified");
+		Assert.assertEquals(maxcharuname, "This username already exists.");
+		logger.log(Status.INFO, "Username maximum character is verified");
+		Assert.assertEquals(maxcharpassword, "This username already exists.");
+		logger.log(Status.INFO, "Password maximum character is verified");
+		
 
 		logger.log(Status.PASS, "Invalid registration error message is recieved.");
 	}
