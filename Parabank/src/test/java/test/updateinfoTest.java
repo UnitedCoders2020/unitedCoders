@@ -41,6 +41,13 @@ public class updateinfoTest extends UpdateInfo {
 		String city = UpdateInfo.UpdatecityErr();
 		String state = UpdateInfo.UpdatestateErr();
 		String zip = UpdateInfo.UpdateZipCodeErr();
+		String invalidfname = UpdateInfo.InvalidfnameErr();
+		String invalidlname = UpdateInfo.InvalidlnameErr();
+		String invalidadd = UpdateInfo.InvalidaddErr();
+		String invalidcity = UpdateInfo.InvalidcityErr();
+		String invalidstate = UpdateInfo.InvalidstateErr();
+		String invalidzip = UpdateInfo.InvalidzipcodeErr();
+		String invalidph = UpdateInfo.InvalidPhnumber();
 		
 
 		Assert.assertEquals(fname, "First name is required.");
@@ -57,6 +64,22 @@ public class updateinfoTest extends UpdateInfo {
 		logger.log(Status.INFO, "Zip code error message verified.");
 		
 		logger.log(Status.PASS, "Invalid registration error message is recieved.");
+		
+		Assert.assertEquals(invalidfname,"Your updated address and phone number have been added to the system." );
+		logger.log(Status.FAIL,"First Name Cannot have Alphanumeric Characters.");
+		Assert.assertEquals(invalidlname,"Your updated address and phone number have been added to the system." );
+		logger.log(Status.FAIL,"Last Name Cannot have Alphanumeric Characters.");
+		Assert.assertEquals(invalidadd,"Your updated address and phone number have been added to the system." );
+		logger.log(Status.FAIL,"Address Cannot have numeric Characters.");
+		Assert.assertEquals(invalidcity,"Your updated address and phone number have been added to the system." );
+		logger.log(Status.FAIL,"City Cannot have Alphanumeric Characters.");
+		Assert.assertEquals(invalidstate,"Your updated address and phone number have been added to the system." );
+		logger.log(Status.FAIL,"State Cannot have Alphanumeric Characters.");
+		Assert.assertEquals(invalidzip,"Your updated address and phone number have been added to the system." );
+		logger.log(Status.FAIL,"Zip Code Cannot have Alphanumeric Characters.");
+		Assert.assertEquals(invalidph,"Your updated address and phone number have been added to the system." );
+		logger.log(Status.FAIL,"Phone Number Cannot have Alphanumeric Characters.");
+		
 		
 		
 
