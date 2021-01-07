@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -18,33 +17,33 @@ import com.testing.Parabank.Utils.ReadingExcel;
 
 public class Registration {
 
-	@FindBy(how=How.ID,using="customer.firstName")
+	@FindBy(id="customer.firstName")
 	static WebElement firstname;
-	@FindBy(how=How.ID,using="customer.lastName")
+	@FindBy(id="customer.lastName")
 	static WebElement lastname;
-	@FindBy(how=How.ID,using="customer.address.street")
+	@FindBy(id="customer.address.street")
 	static WebElement address;
-	@FindBy(how=How.ID,using="customer.address.city")
+	@FindBy(id="customer.address.city")
 	static WebElement city;
-	@FindBy(how=How.ID,using="customer.address.state")
+	@FindBy(id="customer.address.state")
 	static WebElement state;
-	@FindBy(how=How.ID,using="customer.address.zipCode")
+	@FindBy(id="customer.address.zipCode")
 	static WebElement zipcode;
-	@FindBy(how=How.ID,using="customer.phoneNumber")
+	@FindBy(id="customer.phoneNumber")
 	static WebElement phonenumber;
-	@FindBy(how=How.ID,using="customer.ssn")
+	@FindBy(id="customer.ssn")
 	static WebElement ssn;
-	@FindBy(how=How.ID,using="customer.username")
+	@FindBy(id="customer.username")
 	static WebElement username;
-	@FindBy(how=How.ID,using="customer.password")
+	@FindBy(id="customer.password")
 	static WebElement password;
-	@FindBy(how=How.ID,using="repeatedPassword")
+	@FindBy(id="repeatedPassword")
 	static WebElement confirmpassword;
-	@FindBy(how=How.LINK_TEXT,using="Register")
+	@FindBy(linkText="Register")
 	static WebElement register;
-	@FindBy(how=How.LINK_TEXT,using="Log Out")
+	@FindBy(linkText="Log Out")
 	static WebElement logout;
-	@FindBy(how=How.XPATH,using="//div[@id='rightPanel']/p")
+	@FindBy(xpath="//div[@id='rightPanel']/p")
 	static WebElement success;
 	@FindBy(xpath="//input[@value='Register']")
 	static WebElement button;
