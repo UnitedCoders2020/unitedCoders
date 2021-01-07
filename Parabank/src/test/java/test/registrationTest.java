@@ -22,9 +22,10 @@ public class registrationTest extends Registration{
 		
 		logger = report.createTest("Registration is successful");
 
+		Registration.getData();
 		String success = Registration.register();
 		String noPhoneNumber = Registration.withoutPhonenumberRegister();
-		
+	
 		Assert.assertEquals(success, "Your account was created successfully. You are now logged in.");
 		logger.log(Status.INFO, "Registration successfull with valid inputs.");
 		Assert.assertEquals(noPhoneNumber, "Your account was created successfully. You are now logged in.");
@@ -77,3 +78,4 @@ public class registrationTest extends Registration{
 	}
     
 }
+
