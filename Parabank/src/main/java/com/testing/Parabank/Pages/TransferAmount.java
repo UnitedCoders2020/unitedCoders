@@ -19,7 +19,7 @@ public class TransferAmount
 	
 	@FindBy(how = How.LINK_TEXT, using = "Transfer Funds")
 	private static WebElement transferAmount;
-	@FindBy(how = How.XPATH, using = "//input[@class=\\\"button\\\"]")
+	@FindBy(how = How.XPATH, using = "//input[@type = 'submit']")
 	private static WebElement transferButton;
 	@FindBy(how = How.XPATH, using = "//input[@id = 'amount']")
 	private static WebElement amountTextBox;
@@ -71,21 +71,21 @@ public class TransferAmount
 		Select account2 = new Select(toAccount);
 		account2.selectByIndex(1);
 		click(transferButton);
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		String ssString = getText(smallSuccessMessage);
 		screenshot("Positive Amount given");
 		return ssString;
 	}
 	public static String checkingAmount() throws InterruptedException { // Giving Negative Amount
 		click(transferAmount);
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		sendText(amountTextBox , "-10000");
 		Select account1 = new Select(fromAccount);
 		account1.selectByIndex(0);
 		Select account2 = new Select(toAccount);
 		account2.selectByIndex(1);
 		click(transferButton);
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		String ssString = getText(smallSuccessMessage);
 		screenshot("Negative Amount Given");
 		return ssString;
@@ -99,7 +99,7 @@ public class TransferAmount
 		Select account2 = new Select(toAccount);
 		account2.selectByIndex(1);
 		click(transferButton);
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		String ssString = getText(errorMessage);
 		screenshot("Transferamount_invalidamoutnError");
 		return ssString;
@@ -113,7 +113,7 @@ public class TransferAmount
 		Select account2 = new Select(toAccount);
 		account2.selectByIndex(1);
 		click(transferButton);
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		String ssString = getText(largeSuccessMessage);
 		screenshot("Long Amount value given");
 		return ssString;
@@ -126,7 +126,7 @@ public class TransferAmount
 		Select account2 = new Select(toAccount);
 		account2.selectByIndex(1);
 		click(transferButton);
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		String ssString = getText(errorMessage);
 		screenshot("Not Amount Given");
 		return ssString;
