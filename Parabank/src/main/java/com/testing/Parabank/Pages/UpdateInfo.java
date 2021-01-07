@@ -173,13 +173,88 @@ public class UpdateInfo {
 		click(button);
 		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[contains(text(),'Your updated address and phone number have been ad')]")));
 		String result7 = success.getText();
-		screenshot("UpdateInfo_phnumberErr");
 		return result7;
 		
 		
-		
 	}
+    public static String InvalidPhnumber() {
+    	fillUpdateInfoform();
+    	clear(phonenumber);
+    	sendText(phonenumber,"abcdef1234");
+    	click(button);
+    	Wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[contains(text(),'Your updated address and phone number have been ad')]")));
+		String result8 = success.getText();
+		screenshot("Updateinfo_PhnumberErr");
+		return result8;
+    	
+    }
+    public static String InvalidfnameErr() {
+    	fillUpdateInfoform();
+		clear(firstname);
+		sendText(firstname,"abcd123");
+		click(button);
+		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[contains(text(),'Your updated address and phone number have been ad')]")));
+		String result9 = success.getText();
+		screenshot("Invalidfname_Err");
+		return result9;
+    	
+    }
+    public static String InvalidlnameErr() {
+    	fillUpdateInfoform();
+		clear(lastname);
+		sendText(lastname,"abcd@123");
+		click(button);
+		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[contains(text(),'Your updated address and phone number have been ad')]")));
+		String result10 = success.getText();
+		screenshot("Invalidlname_Err");
+		return result10;
+		
+    }
     
+    public static String InvalidaddErr() {
+    	fillUpdateInfoform();
+		clear(address);
+		sendText(address,"12345687");
+		click(button);
+		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[contains(text(),'Your updated address and phone number have been ad')]")));
+		String result11 = success.getText();
+		screenshot("Invalidadd_Err");
+		return result11;
+    	
+    }
+    
+    public static String InvalidcityErr() {
+    	fillUpdateInfoform();
+		clear(city);
+		sendText(city,"@adasf112");
+		click(button);
+		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[contains(text(),'Your updated address and phone number have been ad')]")));
+		String result12 = success.getText();
+		screenshot("Invalidcity_Err");
+		return result12;
+    	
+    }
+    
+    public static String InvalidstateErr() {
+    	fillUpdateInfoform();
+		clear(state);
+		sendText(state,"#Gujarat123");
+		click(button);
+		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[contains(text(),'Your updated address and phone number have been ad')]")));
+		String result13 = success.getText();
+		screenshot("Invalidstate_Err");
+		return result13;
+    }
+    public static String InvalidzipcodeErr() {
+    	fillUpdateInfoform();
+		clear(zipcode);
+		sendText(zipcode,"adc@123");
+		click(button);
+		Wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[contains(text(),'Your updated address and phone number have been ad')]")));
+		String result14 = success.getText();
+		screenshot("Invalidzip_Err");
+		return result14;
+    }
     
     	
     	
