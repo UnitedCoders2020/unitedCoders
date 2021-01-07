@@ -19,21 +19,29 @@ public class DriverSetup {
 		if (browserName.equalsIgnoreCase("ChromeDriver_WindowsOS")) {
 			WebDriverManager.chromedriver().setup();
 			driver= new ChromeDriver();	
-			driver.get("https://parabank.parasoft.com/parabank/index.htm");
+			
 		}
 		//Invoking Firefox Driver in WindowsOS
 		else if (browserName.equalsIgnoreCase("FirefoxDriver_WindowsOS")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver= new FirefoxDriver();
-			driver.get("https://parabank.parasoft.com/parabank/index.htm");
+			
+		}
+		// Invoking IE driver in WindowOS
+		else if (browserName.equalsIgnoreCase("IEDriver_WindowsOS")) {
+
+			WebDriverManager.iedriver().setup();
+			driver = new InternetExplorerDriver();
 		}
 		//Invoking Opera Driver in WindowsOS
 		else if(browserName.equalsIgnoreCase("OperaDriver_WindowsOS")) {
 			WebDriverManager.operadriver().setup();
 			driver= new OperaDriver();
-			driver.get("https://parabank.parasoft.com/parabank/index.htm");
+			
 		}
 		
+		driver.manage().window().maximize();
+		driver.get("https://parabank.parasoft.com/parabank/index.htm");
 		//Returning the Driver
 		return driver;
 	}
