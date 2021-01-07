@@ -51,7 +51,7 @@ public class Registration {
 	static WebDriver driver = DriverSetup.invokeDriver("ChromeDriver_WindowsOS");
 	static XSSFSheet sheet = ReadingExcel.getDataFromExcel();
 	static WebDriverWait Wait = new WebDriverWait(driver, 50);
-	static ArrayList<String> list;
+	static ArrayList<String> list = null;
 	static String user = DateUtils.username();
 
 	public Registration() {
@@ -62,10 +62,13 @@ public class Registration {
 	public static void getData() {
 
 		list = new ArrayList<String>();
-		for (int j = 2; j < 26; j++) {
+		for (int j = 2; j < 25; j++) {
+
 			list.add(sheet.getRow(j).getCell(1).getStringCellValue());
 		}
-
+		for (String i : list) {
+			System.out.println(i);
+		}
 	}
 
 	public static void click(WebElement element) {
@@ -348,7 +351,7 @@ public class Registration {
 
 		fillRegisterForm();
 		sendText(password, list.get(22));
-		sendText(confirmpassword,list.get(22));
+		sendText(confirmpassword, list.get(22));
 		click(button);
 		String actualResult = driver.findElement(By.id("customer.username.errors")).getText();
 		screenshot("Registration_firstnameError");
