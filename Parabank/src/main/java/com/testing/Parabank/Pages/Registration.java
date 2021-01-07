@@ -66,9 +66,9 @@ public class Registration {
 
 			list.add(sheet.getRow(j).getCell(1).getStringCellValue());
 		}
-		for (String i : list) {
-			System.out.println(i);
-		}
+//		for (String i : list) {
+//			System.out.println(i);
+//		}
 	}
 
 	public static void click(WebElement element) {
@@ -80,11 +80,9 @@ public class Registration {
 
 		element.clear();
 		element.sendKeys(text);
-
 	}
 
 	public static void clear(WebElement element) {
-
 		element.clear();
 	}
 
