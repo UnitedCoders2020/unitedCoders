@@ -25,7 +25,7 @@ public class TransferAmountTest extends TransferAmount{
 	public static void transferringAmount() throws Exception {
 		
 		test = report.createTest("Transferring Amount");
-		driver=DriverSetup.driver;
+		
 		
 		test.log(Status.INFO, "Starting the transfer");
 		String ssString = TransferAmount.transferringFunds();
