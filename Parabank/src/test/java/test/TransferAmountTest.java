@@ -8,7 +8,6 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.testing.Parabank.ExtensionMethods.ExtendReport;
 import com.testing.Parabank.Pages.TransferAmount;
-import com.testing.Parabank.TestBase.DriverSetup;
 
 
 
