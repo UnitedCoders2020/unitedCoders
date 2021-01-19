@@ -10,7 +10,8 @@ import cucumber.api.junit.Cucumber;
                   glue="stepDefination",
                   dryRun = false,
                   monochrome = true,
-                  format = {"pretty","html:Cucumber_report"})
+                  format = {"pretty","html:Cucumber_report"},
+                  tags = {"@registrationTest,@Test"})
 public class Registeration_runner {
 
 }

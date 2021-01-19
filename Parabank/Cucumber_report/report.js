@@ -4,7 +4,13 @@ formatter.feature({
   "name": "Check User Registration Form.",
   "description": "",
   "id": "check-user-registration-form.",
-  "keyword": "Feature"
+  "keyword": "Feature",
+  "tags": [
+    {
+      "line": 2,
+      "name": "@registrationTest"
+    }
+  ]
 });
 formatter.scenarioOutline({
   "line": 6,
@@ -68,7 +74,7 @@ formatter.examples({
         "845796",
         "9876543210",
         "321-654-9870",
-        "Rahul@1114",
+        "Rahudl@171914",
         "rahul123",
         "rahul123",
         "1"
@@ -86,7 +92,7 @@ formatter.examples({
         "845796",
         "",
         "321-654-9870",
-        "Rahul@11144",
+        "Rahudl@1719144",
         "rahul123",
         "rahul123",
         "2"
@@ -98,7 +104,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 31880748800,
+  "duration": 9198468800,
   "status": "passed"
 });
 formatter.scenario({
@@ -107,7 +113,13 @@ formatter.scenario({
   "description": "",
   "id": "check-user-registration-form.;successful-registration-on-parabank-website.;;2",
   "type": "scenario",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 2,
+      "name": "@registrationTest"
+    }
+  ]
 });
 formatter.step({
   "line": 7,
@@ -121,7 +133,7 @@ formatter.step({
 });
 formatter.step({
   "line": 9,
-  "name": "User enters \"Rahul\" and \"Dravid\" and \"charminar\" and \"hyderabad\" and \"Andhra pradesh\" and \"845796\" and \"9876543210\" and \"321-654-9870\" and \"Rahul@1114\" and \"rahul123\" and \"rahul123\" to register.",
+  "name": "User enters \"Rahul\" and \"Dravid\" and \"charminar\" and \"hyderabad\" and \"Andhra pradesh\" and \"845796\" and \"9876543210\" and \"321-654-9870\" and \"Rahudl@171914\" and \"rahul123\" and \"rahul123\" to register.",
   "matchedColumns": [
     0,
     1,
@@ -149,14 +161,14 @@ formatter.match({
   "location": "registrationStep.user_is_on_home_page_of_parabank_website()"
 });
 formatter.result({
-  "duration": 2070803900,
+  "duration": 162584200,
   "status": "passed"
 });
 formatter.match({
   "location": "registrationStep.user_clicks_on_register_link_to_fill_the_form()"
 });
 formatter.result({
-  "duration": 8318150200,
+  "duration": 3819594800,
   "status": "passed"
 });
 formatter.match({
@@ -194,22 +206,22 @@ formatter.match({
       "offset": 121
     },
     {
-      "val": "Rahul@1114",
+      "val": "Rahudl@171914",
       "offset": 140
     },
     {
       "val": "rahul123",
-      "offset": 157
+      "offset": 160
     },
     {
       "val": "rahul123",
-      "offset": 172
+      "offset": 175
     }
   ],
   "location": "registrationStep.user_enters_and_and_and_and_and_and_and_and_and_and_to_register(String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 4945522000,
+  "duration": 4647803600,
   "status": "passed"
 });
 formatter.match({
@@ -222,15 +234,11 @@ formatter.match({
   "location": "registrationStep.user_retrieves_the_message_displayed(String)"
 });
 formatter.result({
-  "duration": 8352201300,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 1802470600,
+  "duration": 1521539600,
   "status": "passed"
 });
 formatter.before({
-  "duration": 14050195600,
+  "duration": 36100,
   "status": "passed"
 });
 formatter.scenario({
@@ -239,7 +247,13 @@ formatter.scenario({
   "description": "",
   "id": "check-user-registration-form.;successful-registration-on-parabank-website.;;3",
   "type": "scenario",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 2,
+      "name": "@registrationTest"
+    }
+  ]
 });
 formatter.step({
   "line": 7,
@@ -253,7 +267,7 @@ formatter.step({
 });
 formatter.step({
   "line": 9,
-  "name": "User enters \"Rahul\" and \"Dravid\" and \"charminar\" and \"hyderabad\" and \"Andhra pradesh\" and \"845796\" and \"\" and \"321-654-9870\" and \"Rahul@11144\" and \"rahul123\" and \"rahul123\" to register.",
+  "name": "User enters \"Rahul\" and \"Dravid\" and \"charminar\" and \"hyderabad\" and \"Andhra pradesh\" and \"845796\" and \"\" and \"321-654-9870\" and \"Rahudl@1719144\" and \"rahul123\" and \"rahul123\" to register.",
   "matchedColumns": [
     0,
     1,
@@ -281,14 +295,14 @@ formatter.match({
   "location": "registrationStep.user_is_on_home_page_of_parabank_website()"
 });
 formatter.result({
-  "duration": 1315600,
+  "duration": 1989300,
   "status": "passed"
 });
 formatter.match({
   "location": "registrationStep.user_clicks_on_register_link_to_fill_the_form()"
 });
 formatter.result({
-  "duration": 5423457700,
+  "duration": 4023879700,
   "status": "passed"
 });
 formatter.match({
@@ -326,22 +340,22 @@ formatter.match({
       "offset": 111
     },
     {
-      "val": "Rahul@11144",
+      "val": "Rahudl@1719144",
       "offset": 130
     },
     {
       "val": "rahul123",
-      "offset": 148
+      "offset": 151
     },
     {
       "val": "rahul123",
-      "offset": 163
+      "offset": 166
     }
   ],
   "location": "registrationStep.user_enters_and_and_and_and_and_and_and_and_and_and_to_register(String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 8856384700,
+  "duration": 4316210300,
   "status": "passed"
 });
 formatter.match({
@@ -354,11 +368,7 @@ formatter.match({
   "location": "registrationStep.user_retrieves_the_message_displayed(String)"
 });
 formatter.result({
-  "duration": 5560159900,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 1504666700,
+  "duration": 875251300,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -795,7 +805,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 22520782700,
+  "duration": 381300,
   "status": "passed"
 });
 formatter.scenario({
@@ -804,7 +814,13 @@ formatter.scenario({
   "description": "",
   "id": "check-user-registration-form.;unsuccessful-registration-on-parabank-website.;;2",
   "type": "scenario",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 2,
+      "name": "@registrationTest"
+    }
+  ]
 });
 formatter.step({
   "line": 18,
@@ -846,14 +862,14 @@ formatter.match({
   "location": "registrationStep.user_is_on_home_page_of_parabank_website()"
 });
 formatter.result({
-  "duration": 988100,
+  "duration": 1081200,
   "status": "passed"
 });
 formatter.match({
   "location": "registrationStep.user_clicks_on_register_link_to_fill_the_form()"
 });
 formatter.result({
-  "duration": 5155123700,
+  "duration": 4017684500,
   "status": "passed"
 });
 formatter.match({
@@ -906,7 +922,7 @@ formatter.match({
   "location": "registrationStep.user_enters_and_and_and_and_and_and_and_and_and_and_to_get_error_message(String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 4918600200,
+  "duration": 3633900900,
   "status": "passed"
 });
 formatter.match({
@@ -919,15 +935,11 @@ formatter.match({
   "location": "registrationStep.user_retrieves_the_message_displayed_using(String)"
 });
 formatter.result({
-  "duration": 406341700,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 1548992500,
+  "duration": 585331700,
   "status": "passed"
 });
 formatter.before({
-  "duration": 13145806200,
+  "duration": 32000,
   "status": "passed"
 });
 formatter.scenario({
@@ -936,7 +948,13 @@ formatter.scenario({
   "description": "",
   "id": "check-user-registration-form.;unsuccessful-registration-on-parabank-website.;;3",
   "type": "scenario",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 2,
+      "name": "@registrationTest"
+    }
+  ]
 });
 formatter.step({
   "line": 18,
@@ -978,14 +996,14 @@ formatter.match({
   "location": "registrationStep.user_is_on_home_page_of_parabank_website()"
 });
 formatter.result({
-  "duration": 748900,
+  "duration": 786000,
   "status": "passed"
 });
 formatter.match({
   "location": "registrationStep.user_clicks_on_register_link_to_fill_the_form()"
 });
 formatter.result({
-  "duration": 4466777500,
+  "duration": 3520751800,
   "status": "passed"
 });
 formatter.match({
@@ -1038,7 +1056,7 @@ formatter.match({
   "location": "registrationStep.user_enters_and_and_and_and_and_and_and_and_and_and_to_get_error_message(String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 3719286900,
+  "duration": 3550131700,
   "status": "passed"
 });
 formatter.match({
@@ -1051,15 +1069,11 @@ formatter.match({
   "location": "registrationStep.user_retrieves_the_message_displayed_using(String)"
 });
 formatter.result({
-  "duration": 54076500,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 4509216000,
+  "duration": 55831800,
   "status": "passed"
 });
 formatter.before({
-  "duration": 12911660700,
+  "duration": 41600,
   "status": "passed"
 });
 formatter.scenario({
@@ -1068,7 +1082,13 @@ formatter.scenario({
   "description": "",
   "id": "check-user-registration-form.;unsuccessful-registration-on-parabank-website.;;4",
   "type": "scenario",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 2,
+      "name": "@registrationTest"
+    }
+  ]
 });
 formatter.step({
   "line": 18,
@@ -1110,14 +1130,14 @@ formatter.match({
   "location": "registrationStep.user_is_on_home_page_of_parabank_website()"
 });
 formatter.result({
-  "duration": 828100,
+  "duration": 708000,
   "status": "passed"
 });
 formatter.match({
   "location": "registrationStep.user_clicks_on_register_link_to_fill_the_form()"
 });
 formatter.result({
-  "duration": 4516522200,
+  "duration": 3525330800,
   "status": "passed"
 });
 formatter.match({
@@ -1170,7 +1190,7 @@ formatter.match({
   "location": "registrationStep.user_enters_and_and_and_and_and_and_and_and_and_and_to_get_error_message(String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 13396252000,
+  "duration": 3587444200,
   "status": "passed"
 });
 formatter.match({
@@ -1183,15 +1203,11 @@ formatter.match({
   "location": "registrationStep.user_retrieves_the_message_displayed_using(String)"
 });
 formatter.result({
-  "duration": 56327800,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 2989551700,
+  "duration": 46644000,
   "status": "passed"
 });
 formatter.before({
-  "duration": 17466124300,
+  "duration": 31600,
   "status": "passed"
 });
 formatter.scenario({
@@ -1200,7 +1216,13 @@ formatter.scenario({
   "description": "",
   "id": "check-user-registration-form.;unsuccessful-registration-on-parabank-website.;;5",
   "type": "scenario",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 2,
+      "name": "@registrationTest"
+    }
+  ]
 });
 formatter.step({
   "line": 18,
@@ -1242,14 +1264,14 @@ formatter.match({
   "location": "registrationStep.user_is_on_home_page_of_parabank_website()"
 });
 formatter.result({
-  "duration": 695000,
+  "duration": 638800,
   "status": "passed"
 });
 formatter.match({
   "location": "registrationStep.user_clicks_on_register_link_to_fill_the_form()"
 });
 formatter.result({
-  "duration": 8686012100,
+  "duration": 3490540000,
   "status": "passed"
 });
 formatter.match({
@@ -1302,7 +1324,7 @@ formatter.match({
   "location": "registrationStep.user_enters_and_and_and_and_and_and_and_and_and_and_to_get_error_message(String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 6403230000,
+  "duration": 3466822500,
   "status": "passed"
 });
 formatter.match({
@@ -1315,15 +1337,11 @@ formatter.match({
   "location": "registrationStep.user_retrieves_the_message_displayed_using(String)"
 });
 formatter.result({
-  "duration": 51921000,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 9620641200,
+  "duration": 47656000,
   "status": "passed"
 });
 formatter.before({
-  "duration": 24287261100,
+  "duration": 35500,
   "status": "passed"
 });
 formatter.scenario({
@@ -1332,7 +1350,13 @@ formatter.scenario({
   "description": "",
   "id": "check-user-registration-form.;unsuccessful-registration-on-parabank-website.;;6",
   "type": "scenario",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 2,
+      "name": "@registrationTest"
+    }
+  ]
 });
 formatter.step({
   "line": 18,
@@ -1374,14 +1398,14 @@ formatter.match({
   "location": "registrationStep.user_is_on_home_page_of_parabank_website()"
 });
 formatter.result({
-  "duration": 803500,
+  "duration": 681300,
   "status": "passed"
 });
 formatter.match({
   "location": "registrationStep.user_clicks_on_register_link_to_fill_the_form()"
 });
 formatter.result({
-  "duration": 6534163000,
+  "duration": 3471879400,
   "status": "passed"
 });
 formatter.match({
@@ -1434,7 +1458,7 @@ formatter.match({
   "location": "registrationStep.user_enters_and_and_and_and_and_and_and_and_and_and_to_get_error_message(String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 4187834300,
+  "duration": 4001876900,
   "status": "passed"
 });
 formatter.match({
@@ -1447,15 +1471,11 @@ formatter.match({
   "location": "registrationStep.user_retrieves_the_message_displayed_using(String)"
 });
 formatter.result({
-  "duration": 51139500,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 4728914600,
+  "duration": 48757900,
   "status": "passed"
 });
 formatter.before({
-  "duration": 22883262900,
+  "duration": 38200,
   "status": "passed"
 });
 formatter.scenario({
@@ -1464,7 +1484,13 @@ formatter.scenario({
   "description": "",
   "id": "check-user-registration-form.;unsuccessful-registration-on-parabank-website.;;7",
   "type": "scenario",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 2,
+      "name": "@registrationTest"
+    }
+  ]
 });
 formatter.step({
   "line": 18,
@@ -1506,14 +1532,14 @@ formatter.match({
   "location": "registrationStep.user_is_on_home_page_of_parabank_website()"
 });
 formatter.result({
-  "duration": 873200,
+  "duration": 639900,
   "status": "passed"
 });
 formatter.match({
   "location": "registrationStep.user_clicks_on_register_link_to_fill_the_form()"
 });
 formatter.result({
-  "duration": 4369674700,
+  "duration": 3495574500,
   "status": "passed"
 });
 formatter.match({
@@ -1566,7 +1592,7 @@ formatter.match({
   "location": "registrationStep.user_enters_and_and_and_and_and_and_and_and_and_and_to_get_error_message(String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 4408939200,
+  "duration": 3622661400,
   "status": "passed"
 });
 formatter.match({
@@ -1579,15 +1605,11 @@ formatter.match({
   "location": "registrationStep.user_retrieves_the_message_displayed_using(String)"
 });
 formatter.result({
-  "duration": 49605200,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 6168205200,
+  "duration": 49819900,
   "status": "passed"
 });
 formatter.before({
-  "duration": 23511371600,
+  "duration": 39600,
   "status": "passed"
 });
 formatter.scenario({
@@ -1596,7 +1618,13 @@ formatter.scenario({
   "description": "",
   "id": "check-user-registration-form.;unsuccessful-registration-on-parabank-website.;;8",
   "type": "scenario",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 2,
+      "name": "@registrationTest"
+    }
+  ]
 });
 formatter.step({
   "line": 18,
@@ -1638,14 +1666,14 @@ formatter.match({
   "location": "registrationStep.user_is_on_home_page_of_parabank_website()"
 });
 formatter.result({
-  "duration": 740300,
+  "duration": 769400,
   "status": "passed"
 });
 formatter.match({
   "location": "registrationStep.user_clicks_on_register_link_to_fill_the_form()"
 });
 formatter.result({
-  "duration": 5672900300,
+  "duration": 3465043400,
   "status": "passed"
 });
 formatter.match({
@@ -1698,7 +1726,7 @@ formatter.match({
   "location": "registrationStep.user_enters_and_and_and_and_and_and_and_and_and_and_to_get_error_message(String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 4490917500,
+  "duration": 3748804800,
   "status": "passed"
 });
 formatter.match({
@@ -1711,15 +1739,11 @@ formatter.match({
   "location": "registrationStep.user_retrieves_the_message_displayed_using(String)"
 });
 formatter.result({
-  "duration": 54689600,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 2738477900,
+  "duration": 47688200,
   "status": "passed"
 });
 formatter.before({
-  "duration": 9027648900,
+  "duration": 34500,
   "status": "passed"
 });
 formatter.scenario({
@@ -1728,7 +1752,13 @@ formatter.scenario({
   "description": "",
   "id": "check-user-registration-form.;unsuccessful-registration-on-parabank-website.;;9",
   "type": "scenario",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 2,
+      "name": "@registrationTest"
+    }
+  ]
 });
 formatter.step({
   "line": 18,
@@ -1770,14 +1800,14 @@ formatter.match({
   "location": "registrationStep.user_is_on_home_page_of_parabank_website()"
 });
 formatter.result({
-  "duration": 714300,
+  "duration": 627400,
   "status": "passed"
 });
 formatter.match({
   "location": "registrationStep.user_clicks_on_register_link_to_fill_the_form()"
 });
 formatter.result({
-  "duration": 3919789800,
+  "duration": 3510037900,
   "status": "passed"
 });
 formatter.match({
@@ -1830,7 +1860,7 @@ formatter.match({
   "location": "registrationStep.user_enters_and_and_and_and_and_and_and_and_and_and_to_get_error_message(String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 8132681700,
+  "duration": 11556652600,
   "status": "passed"
 });
 formatter.match({
@@ -1843,15 +1873,11 @@ formatter.match({
   "location": "registrationStep.user_retrieves_the_message_displayed_using(String)"
 });
 formatter.result({
-  "duration": 55045200,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 1692941500,
+  "duration": 52250000,
   "status": "passed"
 });
 formatter.before({
-  "duration": 12171010900,
+  "duration": 49300,
   "status": "passed"
 });
 formatter.scenario({
@@ -1860,7 +1886,13 @@ formatter.scenario({
   "description": "",
   "id": "check-user-registration-form.;unsuccessful-registration-on-parabank-website.;;10",
   "type": "scenario",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 2,
+      "name": "@registrationTest"
+    }
+  ]
 });
 formatter.step({
   "line": 18,
@@ -1902,14 +1934,14 @@ formatter.match({
   "location": "registrationStep.user_is_on_home_page_of_parabank_website()"
 });
 formatter.result({
-  "duration": 976900,
+  "duration": 625200,
   "status": "passed"
 });
 formatter.match({
   "location": "registrationStep.user_clicks_on_register_link_to_fill_the_form()"
 });
 formatter.result({
-  "duration": 4395431000,
+  "duration": 7964340600,
   "status": "passed"
 });
 formatter.match({
@@ -1962,7 +1994,7 @@ formatter.match({
   "location": "registrationStep.user_enters_and_and_and_and_and_and_and_and_and_and_to_get_error_message(String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 3833313100,
+  "duration": 5776513600,
   "status": "passed"
 });
 formatter.match({
@@ -1975,15 +2007,11 @@ formatter.match({
   "location": "registrationStep.user_retrieves_the_message_displayed_using(String)"
 });
 formatter.result({
-  "duration": 50552500,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 1447098600,
+  "duration": 49562700,
   "status": "passed"
 });
 formatter.before({
-  "duration": 8486397600,
+  "duration": 31000,
   "status": "passed"
 });
 formatter.scenario({
@@ -1992,7 +2020,13 @@ formatter.scenario({
   "description": "",
   "id": "check-user-registration-form.;unsuccessful-registration-on-parabank-website.;;11",
   "type": "scenario",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 2,
+      "name": "@registrationTest"
+    }
+  ]
 });
 formatter.step({
   "line": 18,
@@ -2034,14 +2068,14 @@ formatter.match({
   "location": "registrationStep.user_is_on_home_page_of_parabank_website()"
 });
 formatter.result({
-  "duration": 819600,
+  "duration": 654600,
   "status": "passed"
 });
 formatter.match({
   "location": "registrationStep.user_clicks_on_register_link_to_fill_the_form()"
 });
 formatter.result({
-  "duration": 4290925400,
+  "duration": 4012100300,
   "status": "passed"
 });
 formatter.match({
@@ -2094,7 +2128,7 @@ formatter.match({
   "location": "registrationStep.user_enters_and_and_and_and_and_and_and_and_and_and_to_get_error_message(String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 3736353300,
+  "duration": 4059615900,
   "status": "passed"
 });
 formatter.match({
@@ -2107,15 +2141,11 @@ formatter.match({
   "location": "registrationStep.user_retrieves_the_message_displayed_using(String)"
 });
 formatter.result({
-  "duration": 46212400,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 1497623100,
+  "duration": 48982300,
   "status": "passed"
 });
 formatter.before({
-  "duration": 10036121000,
+  "duration": 28200,
   "status": "passed"
 });
 formatter.scenario({
@@ -2124,7 +2154,13 @@ formatter.scenario({
   "description": "",
   "id": "check-user-registration-form.;unsuccessful-registration-on-parabank-website.;;12",
   "type": "scenario",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 2,
+      "name": "@registrationTest"
+    }
+  ]
 });
 formatter.step({
   "line": 18,
@@ -2166,14 +2202,14 @@ formatter.match({
   "location": "registrationStep.user_is_on_home_page_of_parabank_website()"
 });
 formatter.result({
-  "duration": 1396700,
+  "duration": 646200,
   "status": "passed"
 });
 formatter.match({
   "location": "registrationStep.user_clicks_on_register_link_to_fill_the_form()"
 });
 formatter.result({
-  "duration": 4003037000,
+  "duration": 3928319600,
   "status": "passed"
 });
 formatter.match({
@@ -2226,7 +2262,7 @@ formatter.match({
   "location": "registrationStep.user_enters_and_and_and_and_and_and_and_and_and_and_to_get_error_message(String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 4368555200,
+  "duration": 3721108400,
   "status": "passed"
 });
 formatter.match({
@@ -2239,15 +2275,11 @@ formatter.match({
   "location": "registrationStep.user_retrieves_the_message_displayed_using(String)"
 });
 formatter.result({
-  "duration": 51888900,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 1754373000,
+  "duration": 63559200,
   "status": "passed"
 });
 formatter.before({
-  "duration": 11220797000,
+  "duration": 31700,
   "status": "passed"
 });
 formatter.scenario({
@@ -2256,7 +2288,13 @@ formatter.scenario({
   "description": "",
   "id": "check-user-registration-form.;unsuccessful-registration-on-parabank-website.;;13",
   "type": "scenario",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 2,
+      "name": "@registrationTest"
+    }
+  ]
 });
 formatter.step({
   "line": 18,
@@ -2298,14 +2336,14 @@ formatter.match({
   "location": "registrationStep.user_is_on_home_page_of_parabank_website()"
 });
 formatter.result({
-  "duration": 1225500,
+  "duration": 682100,
   "status": "passed"
 });
 formatter.match({
   "location": "registrationStep.user_clicks_on_register_link_to_fill_the_form()"
 });
 formatter.result({
-  "duration": 5665474800,
+  "duration": 4047810100,
   "status": "passed"
 });
 formatter.match({
@@ -2358,7 +2396,7 @@ formatter.match({
   "location": "registrationStep.user_enters_and_and_and_and_and_and_and_and_and_and_to_get_error_message(String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 5035702900,
+  "duration": 4153202700,
   "status": "passed"
 });
 formatter.match({
@@ -2371,15 +2409,11 @@ formatter.match({
   "location": "registrationStep.user_retrieves_the_message_displayed_using(String)"
 });
 formatter.result({
-  "duration": 47632300,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 5758774200,
+  "duration": 44051500,
   "status": "passed"
 });
 formatter.before({
-  "duration": 10039731300,
+  "duration": 37900,
   "status": "passed"
 });
 formatter.scenario({
@@ -2388,7 +2422,13 @@ formatter.scenario({
   "description": "",
   "id": "check-user-registration-form.;unsuccessful-registration-on-parabank-website.;;14",
   "type": "scenario",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 2,
+      "name": "@registrationTest"
+    }
+  ]
 });
 formatter.step({
   "line": 18,
@@ -2430,14 +2470,14 @@ formatter.match({
   "location": "registrationStep.user_is_on_home_page_of_parabank_website()"
 });
 formatter.result({
-  "duration": 678900,
+  "duration": 790300,
   "status": "passed"
 });
 formatter.match({
   "location": "registrationStep.user_clicks_on_register_link_to_fill_the_form()"
 });
 formatter.result({
-  "duration": 4009790500,
+  "duration": 3464664100,
   "status": "passed"
 });
 formatter.match({
@@ -2490,7 +2530,7 @@ formatter.match({
   "location": "registrationStep.user_enters_and_and_and_and_and_and_and_and_and_and_to_get_error_message(String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 4773545000,
+  "duration": 3668695000,
   "status": "passed"
 });
 formatter.match({
@@ -2503,15 +2543,11 @@ formatter.match({
   "location": "registrationStep.user_retrieves_the_message_displayed_using(String)"
 });
 formatter.result({
-  "duration": 47780700,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 1702540400,
+  "duration": 43958000,
   "status": "passed"
 });
 formatter.before({
-  "duration": 10296785300,
+  "duration": 344000,
   "status": "passed"
 });
 formatter.scenario({
@@ -2520,7 +2556,13 @@ formatter.scenario({
   "description": "",
   "id": "check-user-registration-form.;unsuccessful-registration-on-parabank-website.;;15",
   "type": "scenario",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 2,
+      "name": "@registrationTest"
+    }
+  ]
 });
 formatter.step({
   "line": 18,
@@ -2562,14 +2604,14 @@ formatter.match({
   "location": "registrationStep.user_is_on_home_page_of_parabank_website()"
 });
 formatter.result({
-  "duration": 1847900,
+  "duration": 942400,
   "status": "passed"
 });
 formatter.match({
   "location": "registrationStep.user_clicks_on_register_link_to_fill_the_form()"
 });
 formatter.result({
-  "duration": 5818055200,
+  "duration": 3465541300,
   "status": "passed"
 });
 formatter.match({
@@ -2622,7 +2664,7 @@ formatter.match({
   "location": "registrationStep.user_enters_and_and_and_and_and_and_and_and_and_and_to_get_error_message(String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 4204379000,
+  "duration": 3772359300,
   "status": "passed"
 });
 formatter.match({
@@ -2635,15 +2677,11 @@ formatter.match({
   "location": "registrationStep.user_retrieves_the_message_displayed_using(String)"
 });
 formatter.result({
-  "duration": 102295600,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 1395764700,
+  "duration": 44818000,
   "status": "passed"
 });
 formatter.before({
-  "duration": 24738983400,
+  "duration": 29700,
   "status": "passed"
 });
 formatter.scenario({
@@ -2652,7 +2690,13 @@ formatter.scenario({
   "description": "",
   "id": "check-user-registration-form.;unsuccessful-registration-on-parabank-website.;;16",
   "type": "scenario",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 2,
+      "name": "@registrationTest"
+    }
+  ]
 });
 formatter.step({
   "line": 18,
@@ -2694,14 +2738,14 @@ formatter.match({
   "location": "registrationStep.user_is_on_home_page_of_parabank_website()"
 });
 formatter.result({
-  "duration": 686300,
+  "duration": 727500,
   "status": "passed"
 });
 formatter.match({
   "location": "registrationStep.user_clicks_on_register_link_to_fill_the_form()"
 });
 formatter.result({
-  "duration": 27610651700,
+  "duration": 3437023200,
   "status": "passed"
 });
 formatter.match({
@@ -2754,7 +2798,7 @@ formatter.match({
   "location": "registrationStep.user_enters_and_and_and_and_and_and_and_and_and_and_to_get_error_message(String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 5542484100,
+  "duration": 3610725000,
   "status": "passed"
 });
 formatter.match({
@@ -2767,15 +2811,11 @@ formatter.match({
   "location": "registrationStep.user_retrieves_the_message_displayed_using(String)"
 });
 formatter.result({
-  "duration": 52152700,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 1373124000,
+  "duration": 43505600,
   "status": "passed"
 });
 formatter.before({
-  "duration": 8860407200,
+  "duration": 35200,
   "status": "passed"
 });
 formatter.scenario({
@@ -2784,7 +2824,13 @@ formatter.scenario({
   "description": "",
   "id": "check-user-registration-form.;unsuccessful-registration-on-parabank-website.;;17",
   "type": "scenario",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 2,
+      "name": "@registrationTest"
+    }
+  ]
 });
 formatter.step({
   "line": 18,
@@ -2826,14 +2872,14 @@ formatter.match({
   "location": "registrationStep.user_is_on_home_page_of_parabank_website()"
 });
 formatter.result({
-  "duration": 1006100,
+  "duration": 690100,
   "status": "passed"
 });
 formatter.match({
   "location": "registrationStep.user_clicks_on_register_link_to_fill_the_form()"
 });
 formatter.result({
-  "duration": 4791660000,
+  "duration": 3437254800,
   "status": "passed"
 });
 formatter.match({
@@ -2886,7 +2932,7 @@ formatter.match({
   "location": "registrationStep.user_enters_and_and_and_and_and_and_and_and_and_and_to_get_error_message(String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 4311033200,
+  "duration": 4089155000,
   "status": "passed"
 });
 formatter.match({
@@ -2899,15 +2945,11 @@ formatter.match({
   "location": "registrationStep.user_retrieves_the_message_displayed_using(String)"
 });
 formatter.result({
-  "duration": 60938900,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 1358010700,
+  "duration": 52749700,
   "status": "passed"
 });
 formatter.before({
-  "duration": 12346250100,
+  "duration": 27100,
   "status": "passed"
 });
 formatter.scenario({
@@ -2916,7 +2958,13 @@ formatter.scenario({
   "description": "",
   "id": "check-user-registration-form.;unsuccessful-registration-on-parabank-website.;;18",
   "type": "scenario",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 2,
+      "name": "@registrationTest"
+    }
+  ]
 });
 formatter.step({
   "line": 18,
@@ -2958,14 +3006,14 @@ formatter.match({
   "location": "registrationStep.user_is_on_home_page_of_parabank_website()"
 });
 formatter.result({
-  "duration": 979500,
+  "duration": 579600,
   "status": "passed"
 });
 formatter.match({
   "location": "registrationStep.user_clicks_on_register_link_to_fill_the_form()"
 });
 formatter.result({
-  "duration": 4407882900,
+  "duration": 3469162000,
   "status": "passed"
 });
 formatter.match({
@@ -3018,7 +3066,7 @@ formatter.match({
   "location": "registrationStep.user_enters_and_and_and_and_and_and_and_and_and_and_to_get_error_message(String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 4257412800,
+  "duration": 3613678200,
   "status": "passed"
 });
 formatter.match({
@@ -3031,15 +3079,11 @@ formatter.match({
   "location": "registrationStep.user_retrieves_the_message_displayed_using(String)"
 });
 formatter.result({
-  "duration": 48228700,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 1379180500,
+  "duration": 3906096300,
   "status": "passed"
 });
 formatter.before({
-  "duration": 9720157400,
+  "duration": 29800,
   "status": "passed"
 });
 formatter.scenario({
@@ -3048,7 +3092,13 @@ formatter.scenario({
   "description": "",
   "id": "check-user-registration-form.;unsuccessful-registration-on-parabank-website.;;19",
   "type": "scenario",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 2,
+      "name": "@registrationTest"
+    }
+  ]
 });
 formatter.step({
   "line": 18,
@@ -3090,14 +3140,14 @@ formatter.match({
   "location": "registrationStep.user_is_on_home_page_of_parabank_website()"
 });
 formatter.result({
-  "duration": 796000,
+  "duration": 563500,
   "status": "passed"
 });
 formatter.match({
   "location": "registrationStep.user_clicks_on_register_link_to_fill_the_form()"
 });
 formatter.result({
-  "duration": 5552872500,
+  "duration": 4021601000,
   "status": "passed"
 });
 formatter.match({
@@ -3150,7 +3200,7 @@ formatter.match({
   "location": "registrationStep.user_enters_and_and_and_and_and_and_and_and_and_and_to_get_error_message(String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 4510904100,
+  "duration": 3634091800,
   "status": "passed"
 });
 formatter.match({
@@ -3163,15 +3213,11 @@ formatter.match({
   "location": "registrationStep.user_retrieves_the_message_displayed_using(String)"
 });
 formatter.result({
-  "duration": 54325400,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 1837347700,
+  "duration": 45110000,
   "status": "passed"
 });
 formatter.before({
-  "duration": 16739913200,
+  "duration": 33000,
   "status": "passed"
 });
 formatter.scenario({
@@ -3180,7 +3226,13 @@ formatter.scenario({
   "description": "",
   "id": "check-user-registration-form.;unsuccessful-registration-on-parabank-website.;;20",
   "type": "scenario",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 2,
+      "name": "@registrationTest"
+    }
+  ]
 });
 formatter.step({
   "line": 18,
@@ -3222,14 +3274,14 @@ formatter.match({
   "location": "registrationStep.user_is_on_home_page_of_parabank_website()"
 });
 formatter.result({
-  "duration": 664600,
+  "duration": 582800,
   "status": "passed"
 });
 formatter.match({
   "location": "registrationStep.user_clicks_on_register_link_to_fill_the_form()"
 });
 formatter.result({
-  "duration": 5589222300,
+  "duration": 3446109600,
   "status": "passed"
 });
 formatter.match({
@@ -3282,7 +3334,7 @@ formatter.match({
   "location": "registrationStep.user_enters_and_and_and_and_and_and_and_and_and_and_to_get_error_message(String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 4047248400,
+  "duration": 3636260800,
   "status": "passed"
 });
 formatter.match({
@@ -3295,15 +3347,11 @@ formatter.match({
   "location": "registrationStep.user_retrieves_the_message_displayed_using(String)"
 });
 formatter.result({
-  "duration": 47061500,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 2025379300,
+  "duration": 50789900,
   "status": "passed"
 });
 formatter.before({
-  "duration": 19090521100,
+  "duration": 28200,
   "status": "passed"
 });
 formatter.scenario({
@@ -3312,7 +3360,13 @@ formatter.scenario({
   "description": "",
   "id": "check-user-registration-form.;unsuccessful-registration-on-parabank-website.;;21",
   "type": "scenario",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 2,
+      "name": "@registrationTest"
+    }
+  ]
 });
 formatter.step({
   "line": 18,
@@ -3354,14 +3408,14 @@ formatter.match({
   "location": "registrationStep.user_is_on_home_page_of_parabank_website()"
 });
 formatter.result({
-  "duration": 1209900,
+  "duration": 650100,
   "status": "passed"
 });
 formatter.match({
   "location": "registrationStep.user_clicks_on_register_link_to_fill_the_form()"
 });
 formatter.result({
-  "duration": 5544926400,
+  "duration": 3451124700,
   "status": "passed"
 });
 formatter.match({
@@ -3414,7 +3468,7 @@ formatter.match({
   "location": "registrationStep.user_enters_and_and_and_and_and_and_and_and_and_and_to_get_error_message(String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 4182984700,
+  "duration": 3687168900,
   "status": "passed"
 });
 formatter.match({
@@ -3427,15 +3481,11 @@ formatter.match({
   "location": "registrationStep.user_retrieves_the_message_displayed_using(String)"
 });
 formatter.result({
-  "duration": 54631900,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 1370761000,
+  "duration": 46490500,
   "status": "passed"
 });
 formatter.before({
-  "duration": 8343854600,
+  "duration": 29700,
   "status": "passed"
 });
 formatter.scenario({
@@ -3444,7 +3494,13 @@ formatter.scenario({
   "description": "",
   "id": "check-user-registration-form.;unsuccessful-registration-on-parabank-website.;;22",
   "type": "scenario",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 2,
+      "name": "@registrationTest"
+    }
+  ]
 });
 formatter.step({
   "line": 18,
@@ -3486,14 +3542,14 @@ formatter.match({
   "location": "registrationStep.user_is_on_home_page_of_parabank_website()"
 });
 formatter.result({
-  "duration": 805700,
+  "duration": 552900,
   "status": "passed"
 });
 formatter.match({
   "location": "registrationStep.user_clicks_on_register_link_to_fill_the_form()"
 });
 formatter.result({
-  "duration": 3933155800,
+  "duration": 3454973200,
   "status": "passed"
 });
 formatter.match({
@@ -3546,7 +3602,7 @@ formatter.match({
   "location": "registrationStep.user_enters_and_and_and_and_and_and_and_and_and_and_to_get_error_message(String,String,String,String,String,String,String,String,String,String,String)"
 });
 formatter.result({
-  "duration": 3827652900,
+  "duration": 3627397900,
   "status": "passed"
 });
 formatter.match({
@@ -3559,11 +3615,61 @@ formatter.match({
   "location": "registrationStep.user_retrieves_the_message_displayed_using(String)"
 });
 formatter.result({
-  "duration": 57347200,
+  "duration": 41918900,
+  "status": "passed"
+});
+formatter.uri("practice.feature");
+formatter.feature({
+  "line": 3,
+  "name": "practice",
+  "description": "",
+  "id": "practice",
+  "keyword": "Feature",
+  "tags": [
+    {
+      "line": 2,
+      "name": "@Test"
+    }
+  ]
+});
+formatter.before({
+  "duration": 30900,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 5,
+  "name": "just a practice code.",
+  "description": "",
+  "id": "practice;just-a-practice-code.",
+  "type": "scenario",
+  "keyword": "Scenario"
+});
+formatter.step({
+  "line": 7,
+  "name": "user prints hello world.",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 8,
+  "name": "user prints its name.",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "practice.user_prints_hello_world()"
+});
+formatter.result({
+  "duration": 71600,
+  "status": "passed"
+});
+formatter.match({
+  "location": "practice.user_prints_its_name()"
+});
+formatter.result({
+  "duration": 4024659000,
   "status": "passed"
 });
 formatter.after({
-  "duration": 1370399200,
+  "duration": 1560510100,
   "status": "passed"
 });
 });

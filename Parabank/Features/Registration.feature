@@ -1,5 +1,5 @@
 
-
+@registrationTest
 Feature: Check User Registration Form.
 
 
@@ -10,8 +10,8 @@ Then User enters "<firstname>" and "<lastname>" and "<address>" and "<city>" and
 Then User retrieves the message displayed using "<id>".
 Examples:
 | firstname | lastname | address | city | state | zipcode | phonenumber | ssn | username | password | confirmpassword | id |
-| Rahul | Dravid | charminar | hyderabad | Andhra pradesh | 845796 | 9876543210 | 321-654-9870 | Rahul@1114 | rahul123 | rahul123 | 1 |
-| Rahul | Dravid | charminar | hyderabad | Andhra pradesh | 845796 | | 321-654-9870 | Rahul@11144 | rahul123 | rahul123 | 2 |
+| Rahul | Dravid | charminar | hyderabad | Andhra pradesh | 845796 | 9876543210 | 321-654-9870 | Rahudl@171914 | rahul123 | rahul123 | 1 |
+| Rahul | Dravid | charminar | hyderabad | Andhra pradesh | 845796 | | 321-654-9870 | Rahudl@1719144 | rahul123 | rahul123 | 2 |
 
 
 Scenario Outline:Unsuccessful registration on parabank website.
