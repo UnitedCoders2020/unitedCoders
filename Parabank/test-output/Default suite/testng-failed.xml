@@ -3,11 +3,35 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
+      <class name="test.paybillTest">
+        <methods>
+          <include name="invalidBillPay"/>
+          <include name="validBillPay"/>
+        </methods>
+      </class> <!-- test.paybillTest -->
+      <class name="test.TransferAmountTest">
+        <methods>
+          <include name="transferringAmount"/>
+        </methods>
+      </class> <!-- test.TransferAmountTest -->
       <class name="test.registrationTest">
         <methods>
+          <include name="invalidRegistration"/>
           <include name="validRegistration"/>
         </methods>
       </class> <!-- test.registrationTest -->
+      <class name="test.updateinfoTest">
+        <methods>
+          <include name="validUpdate"/>
+          <include name="invalidUpdate"/>
+        </methods>
+      </class> <!-- test.updateinfoTest -->
+      <class name="test.openaccountTest">
+        <methods>
+          <include name="verifyAccount"/>
+          <include name="openaccountmessage"/>
+        </methods>
+      </class> <!-- test.openaccountTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

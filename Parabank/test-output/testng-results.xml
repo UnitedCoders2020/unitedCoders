@@ -2,75 +2,75 @@
 <testng-results skipped="0" failed="0" total="9" passed="9">
   <reporter-output>
   </reporter-output>
-  <suite name="ParabankWebsiteTest" duration-ms="141623" started-at="2021-01-08T08:43:21Z" finished-at="2021-01-08T08:45:42Z">
+  <suite name="ParabankWebsiteTest" duration-ms="149356" started-at="2021-01-19T04:23:48Z" finished-at="2021-01-19T04:26:18Z">
     <groups>
       <group name="SmokeTesting">
-        <method signature="TransferAmountTest.transferringAmount()[pri:0, instance:test.TransferAmountTest@74492]" name="transferringAmount" class="test.TransferAmountTest"/>
-        <method signature="openaccountTest.openaccountmessage()[pri:0, instance:test.openaccountTest@4da2a7]" name="openaccountmessage" class="test.openaccountTest"/>
-        <method signature="openaccountTest.verifyAccount()[pri:0, instance:test.openaccountTest@4da2a7]" name="verifyAccount" class="test.openaccountTest"/>
-        <method signature="paybillTest.validBillPay()[pri:0, instance:test.paybillTest@d78795]" name="validBillPay" class="test.paybillTest"/>
-        <method signature="registrationTest.validRegistration()[pri:0, instance:test.registrationTest@1601e47]" name="validRegistration" class="test.registrationTest"/>
-        <method signature="updateinfoTest.validUpdate()[pri:0, instance:test.updateinfoTest@715e84]" name="validUpdate" class="test.updateinfoTest"/>
+        <method signature="TransferAmountTest.transferringAmount()[pri:0, instance:test.TransferAmountTest@1574cc2]" name="transferringAmount" class="test.TransferAmountTest"/>
+        <method signature="openaccountTest.openaccountmessage()[pri:0, instance:test.openaccountTest@3aae55]" name="openaccountmessage" class="test.openaccountTest"/>
+        <method signature="openaccountTest.verifyAccount()[pri:0, instance:test.openaccountTest@3aae55]" name="verifyAccount" class="test.openaccountTest"/>
+        <method signature="paybillTest.validBillPay()[pri:0, instance:test.paybillTest@bddf5]" name="validBillPay" class="test.paybillTest"/>
+        <method signature="registrationTest.validRegistration()[pri:0, instance:test.registrationTest@1b7cce7]" name="validRegistration" class="test.registrationTest"/>
+        <method signature="updateinfoTest.validUpdate()[pri:0, instance:test.updateinfoTest@9c84a5]" name="validUpdate" class="test.updateinfoTest"/>
       </group> <!-- SmokeTesting -->
       <group name="RegressionTesting">
-        <method signature="TransferAmountTest.transferringAmount()[pri:0, instance:test.TransferAmountTest@74492]" name="transferringAmount" class="test.TransferAmountTest"/>
-        <method signature="openaccountTest.openaccountmessage()[pri:0, instance:test.openaccountTest@4da2a7]" name="openaccountmessage" class="test.openaccountTest"/>
-        <method signature="openaccountTest.verifyAccount()[pri:0, instance:test.openaccountTest@4da2a7]" name="verifyAccount" class="test.openaccountTest"/>
-        <method signature="paybillTest.invalidBillPay()[pri:0, instance:test.paybillTest@d78795]" name="invalidBillPay" class="test.paybillTest"/>
-        <method signature="paybillTest.validBillPay()[pri:0, instance:test.paybillTest@d78795]" name="validBillPay" class="test.paybillTest"/>
-        <method signature="registrationTest.invalidRegistration()[pri:0, instance:test.registrationTest@1601e47]" name="invalidRegistration" class="test.registrationTest"/>
-        <method signature="registrationTest.validRegistration()[pri:0, instance:test.registrationTest@1601e47]" name="validRegistration" class="test.registrationTest"/>
-        <method signature="updateinfoTest.invalidUpdate()[pri:0, instance:test.updateinfoTest@715e84]" name="invalidUpdate" class="test.updateinfoTest"/>
-        <method signature="updateinfoTest.validUpdate()[pri:0, instance:test.updateinfoTest@715e84]" name="validUpdate" class="test.updateinfoTest"/>
+        <method signature="TransferAmountTest.transferringAmount()[pri:0, instance:test.TransferAmountTest@1574cc2]" name="transferringAmount" class="test.TransferAmountTest"/>
+        <method signature="openaccountTest.openaccountmessage()[pri:0, instance:test.openaccountTest@3aae55]" name="openaccountmessage" class="test.openaccountTest"/>
+        <method signature="openaccountTest.verifyAccount()[pri:0, instance:test.openaccountTest@3aae55]" name="verifyAccount" class="test.openaccountTest"/>
+        <method signature="paybillTest.invalidBillPay()[pri:0, instance:test.paybillTest@bddf5]" name="invalidBillPay" class="test.paybillTest"/>
+        <method signature="paybillTest.validBillPay()[pri:0, instance:test.paybillTest@bddf5]" name="validBillPay" class="test.paybillTest"/>
+        <method signature="registrationTest.invalidRegistration()[pri:0, instance:test.registrationTest@1b7cce7]" name="invalidRegistration" class="test.registrationTest"/>
+        <method signature="registrationTest.validRegistration()[pri:0, instance:test.registrationTest@1b7cce7]" name="validRegistration" class="test.registrationTest"/>
+        <method signature="updateinfoTest.invalidUpdate()[pri:0, instance:test.updateinfoTest@9c84a5]" name="invalidUpdate" class="test.updateinfoTest"/>
+        <method signature="updateinfoTest.validUpdate()[pri:0, instance:test.updateinfoTest@9c84a5]" name="validUpdate" class="test.updateinfoTest"/>
       </group> <!-- RegressionTesting -->
     </groups>
-    <test name="Smoke And Regression Testing" duration-ms="141623" started-at="2021-01-08T08:43:21Z" finished-at="2021-01-08T08:45:42Z">
+    <test name="Smoke And Regression Testing" duration-ms="149356" started-at="2021-01-19T04:23:48Z" finished-at="2021-01-19T04:26:18Z">
       <class name="test.updateinfoTest">
-        <test-method status="PASS" signature="validUpdate()[pri:0, instance:test.updateinfoTest@715e84]" name="validUpdate" duration-ms="4451" started-at="2021-01-08T14:15:28Z" finished-at="2021-01-08T14:15:33Z">
+        <test-method status="PASS" signature="validUpdate()[pri:0, instance:test.updateinfoTest@9c84a5]" name="validUpdate" duration-ms="4485" started-at="2021-01-19T09:56:03Z" finished-at="2021-01-19T09:56:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validUpdate -->
-        <test-method status="PASS" signature="invalidUpdate()[pri:0, instance:test.updateinfoTest@715e84]" name="invalidUpdate" duration-ms="9553" started-at="2021-01-08T14:15:33Z" finished-at="2021-01-08T14:15:42Z">
+        <test-method status="PASS" signature="invalidUpdate()[pri:0, instance:test.updateinfoTest@9c84a5]" name="invalidUpdate" duration-ms="10377" started-at="2021-01-19T09:56:07Z" finished-at="2021-01-19T09:56:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidUpdate -->
       </class> <!-- test.updateinfoTest -->
       <class name="test.paybillTest">
-        <test-method status="PASS" signature="validBillPay()[pri:0, instance:test.paybillTest@d78795]" name="validBillPay" duration-ms="2036" started-at="2021-01-08T14:15:08Z" finished-at="2021-01-08T14:15:10Z">
+        <test-method status="PASS" signature="validBillPay()[pri:0, instance:test.paybillTest@bddf5]" name="validBillPay" duration-ms="1988" started-at="2021-01-19T09:55:43Z" finished-at="2021-01-19T09:55:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validBillPay -->
-        <test-method status="PASS" signature="invalidBillPay()[pri:0, instance:test.paybillTest@d78795]" name="invalidBillPay" duration-ms="17900" started-at="2021-01-08T14:15:10Z" finished-at="2021-01-08T14:15:28Z">
+        <test-method status="PASS" signature="invalidBillPay()[pri:0, instance:test.paybillTest@bddf5]" name="invalidBillPay" duration-ms="17464" started-at="2021-01-19T09:55:45Z" finished-at="2021-01-19T09:56:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- invalidBillPay -->
       </class> <!-- test.paybillTest -->
       <class name="test.TransferAmountTest">
-        <test-method status="PASS" signature="transferringAmount()[pri:0, instance:test.TransferAmountTest@74492]" name="transferringAmount" duration-ms="33629" started-at="2021-01-08T14:14:35Z" finished-at="2021-01-08T14:15:08Z">
+        <test-method status="PASS" signature="transferringAmount()[pri:0, instance:test.TransferAmountTest@1574cc2]" name="transferringAmount" duration-ms="31072" started-at="2021-01-19T09:55:12Z" finished-at="2021-01-19T09:55:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- transferringAmount -->
       </class> <!-- test.TransferAmountTest -->
-      <class name="test.registrationTest">
-        <test-method status="PASS" signature="validRegistration()[pri:0, instance:test.registrationTest@1601e47]" name="validRegistration" duration-ms="11184" started-at="2021-01-08T14:13:21Z" finished-at="2021-01-08T14:13:32Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validRegistration -->
-        <test-method status="PASS" signature="invalidRegistration()[pri:0, instance:test.registrationTest@1601e47]" name="invalidRegistration" duration-ms="55490" started-at="2021-01-08T14:13:32Z" finished-at="2021-01-08T14:14:27Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- invalidRegistration -->
-      </class> <!-- test.registrationTest -->
       <class name="test.openaccountTest">
-        <test-method status="PASS" signature="openaccountmessage()[pri:0, instance:test.openaccountTest@4da2a7]" name="openaccountmessage" duration-ms="6002" started-at="2021-01-08T14:14:27Z" finished-at="2021-01-08T14:14:33Z">
+        <test-method status="PASS" signature="openaccountmessage()[pri:0, instance:test.openaccountTest@3aae55]" name="openaccountmessage" duration-ms="6389" started-at="2021-01-19T09:55:05Z" finished-at="2021-01-19T09:55:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openaccountmessage -->
-        <test-method status="PASS" signature="verifyAccount()[pri:0, instance:test.openaccountTest@4da2a7]" name="verifyAccount" duration-ms="1334" started-at="2021-01-08T14:14:33Z" finished-at="2021-01-08T14:14:35Z">
+        <test-method status="PASS" signature="verifyAccount()[pri:0, instance:test.openaccountTest@3aae55]" name="verifyAccount" duration-ms="1291" started-at="2021-01-19T09:55:11Z" finished-at="2021-01-19T09:55:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAccount -->
       </class> <!-- test.openaccountTest -->
+      <class name="test.registrationTest">
+        <test-method status="PASS" signature="validRegistration()[pri:0, instance:test.registrationTest@1b7cce7]" name="validRegistration" duration-ms="17107" started-at="2021-01-19T09:53:48Z" finished-at="2021-01-19T09:54:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validRegistration -->
+        <test-method status="PASS" signature="invalidRegistration()[pri:0, instance:test.registrationTest@1b7cce7]" name="invalidRegistration" duration-ms="59142" started-at="2021-01-19T09:54:06Z" finished-at="2021-01-19T09:55:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidRegistration -->
+      </class> <!-- test.registrationTest -->
     </test> <!-- Smoke And Regression Testing -->
   </suite> <!-- ParabankWebsiteTest -->
 </testng-results>

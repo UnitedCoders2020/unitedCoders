@@ -18,7 +18,7 @@ import com.testing.Parabank.Utils.ReadingExcel;
 public class Registration {
 
 	@FindBy(id = "customer.firstName")
-	static WebElement firstname;
+	public static WebElement firstname;
 	@FindBy(id = "customer.lastName")
 	static WebElement lastname;
 	@FindBy(id = "customer.address.street")
